@@ -182,9 +182,15 @@ a { color: inherit; text-decoration: none; }
 .hero__grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  grid-template-areas:
+    "text  visual"
+    "trust visual";
+  gap: 48px 80px;
+  align-items: start;
 }
+.hero__text   { grid-area: text; }
+.hero__visual { grid-area: visual; align-self: center; }
+.hero__trust  { grid-area: trust; }
 .hero__eyebrow { margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
 .hero__eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold-vivid); }
 .hero__headline {
@@ -1154,10 +1160,15 @@ a { color: inherit; text-decoration: none; }
   .nav__links, .nav__cta { display: none; }
   .nav__burger { display: flex; }
 
-  /* HERO — photo stays visible on mobile, stacked layout */
+  /* HERO — mobile: text → photo → trust numbers stacked */
   .hero { padding: 40px 0 80px; }
-  .hero__grid { grid-template-columns: 1fr; gap: 50px; }
-  .hero__visual { max-width: 440px; margin: 0 auto; order: -1; }  /* Foto aparece ANTES do texto no mobile */
+  .hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "text" "visual" "trust";
+    gap: 40px;
+  }
+  .hero__visual { max-width: 440px; margin: 0 auto; }
+  .hero__actions { margin-bottom: 0; }
   .hero__headline { font-size: clamp(38px, 9vw, 56px); }
   .hero__trust { gap: 24px; }
 
