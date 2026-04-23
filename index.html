@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Two Cure — Rolfing® & Movement Training · London, ON</title>
+<meta name="description" content="Move Two Cure is a movement reprogramming clinic in London, Ontario. Rolfing® Structural Integration and personalized training — for chronic pain, performance, and longevity.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- External stylesheet -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+     ═══════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo">
+      <img src="images/logo-green-horizontal.png" alt="Move two cure">
+    </a>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#rolfing">Rolfing®</a></li>
+      <li><a href="#training">Training</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav__cta">Book Free Consultation</a>
+    <button class="nav__burger" onclick="document.querySelector('.mobile-menu').classList.add('is-open'); document.querySelector('.mobile-menu__backdrop').classList.add('is-open');" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="8" x2="20" y2="8" stroke-linecap="round"/><line x1="4" y1="16" x2="20" y2="16" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu__backdrop" onclick="document.querySelector('.mobile-menu').classList.remove('is-open'); this.classList.remove('is-open');"></div>
+<div class="mobile-menu">
+  <button class="mobile-menu__close" onclick="document.querySelector('.mobile-menu').classList.remove('is-open'); document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round"/><line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round"/></svg>
+  </button>
+  <a href="#about" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">About</a>
+  <a href="#services" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Services</a>
+  <a href="#rolfing" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Rolfing®</a>
+  <a href="#training" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Training</a>
+  <a href="#faq" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">FAQ</a>
+  <a href="#contact" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Contact</a>
+  <a href="#contact" class="mobile-menu__cta" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Book Free Consultation</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__text">
+        <p class="hero__eyebrow reveal"><span class="eyebrow">London · Ontario · Canada</span></p>
+        <h1 class="hero__headline reveal rd-1">Move without<br>fear. <em>Live without<br>limits.</em></h1>
+        <p class="hero__sub reveal rd-2">We don't just treat pain — we teach your body that movement is safe again. Through Rolfing® and personalized training, built on movement science.</p>
+        <div class="hero__actions reveal rd-3">
+          <a href="#contact" class="btn btn--primary">
+            Book Free Consultation
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#services" class="btn btn--ghost">Our Method</a>
+        </div>
+        <div class="hero__trust reveal rd-4">
+          <div class="hero__trust-item">
+            <span class="hero__trust-num">20+</span>
+            <span class="hero__trust-label">years combined experience</span>
+          </div>
+          <div class="hero__trust-item">
+            <span class="hero__trust-num">500+</span>
+            <span class="hero__trust-label">clients guided to pain-free life</span>
+          </div>
+          <div class="hero__trust-item">
+            <span class="hero__trust-num">2</span>
+            <span class="hero__trust-label">certified specialists · one system</span>
+          </div>
+        </div>
+      </div>
+      <!-- Hero photo — visible on BOTH desktop AND mobile (stacked) -->
+      <div class="hero__visual reveal rd-2">
+        <div class="hero__photo">
+          <img src="images/jeymison-training.jpg" alt="Jeymison coaching a client through movement correction">
+        </div>
+        <div class="hero__badge">
+          <div class="hero__badge-icon">
+            <img src="images/enso-gold.png" alt="">
+          </div>
+          <div class="hero__badge-text">
+            <b>Movement is Information</b>
+            <span>The M2C Method · since 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PHILOSOPHY
+     ═══════════════════════════════════════════ -->
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <div class="philosophy__grid">
+      <div class="reveal">
+        <p class="philosophy__eyebrow"><span class="eyebrow">01 — Our Philosophy</span></p>
+        <h2 class="philosophy__title">Pain is not a <em>problem.</em><br>It's a message.</h2>
+        <p class="philosophy__text">Most people with chronic pain don't have a broken body. They have <strong>a nervous system that learned to protect itself</strong> — and never received the information that it's safe to move again.</p>
+        <p class="philosophy__text">Our work is to deliver the right inputs: safety, control, capacity. Your body isn't failing. It's waiting for the right information.</p>
+        <blockquote class="philosophy__quote">
+          "Pain is your nervous system's best guess about threat — not a verdict about your body."
+        </blockquote>
+      </div>
+
+      <div class="philosophy__pillars reveal rd-2">
+        <div class="pillar-card">
+          <p class="pillar-card__num">I · Pain</p>
+          <h3 class="pillar-card__title">A strategy, not a sentence</h3>
+          <p class="pillar-card__text">Pain appears when your nervous system interprets your body as being at risk. We change the interpretation — giving it evidence that movement is safe.</p>
+        </div>
+        <div class="pillar-card">
+          <p class="pillar-card__num">II · Health</p>
+          <h3 class="pillar-card__title">Capacity to carry load without fear</h3>
+          <p class="pillar-card__text">Health isn't the absence of symptoms. It's the presence of confidence, strength, and freedom of movement. It's being able to trust your own body.</p>
+        </div>
+        <div class="pillar-card">
+          <p class="pillar-card__num">III · Your outcome</p>
+          <h3 class="pillar-card__title">Adaptive capacity — not sessions</h3>
+          <p class="pillar-card__text">We don't sell appointments. We rebuild the version of you that runs without calculating risk, plays with your kids without thinking, lives without negotiating with your body.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     METHOD — Aware · Restore · Build · Perform
+     ═══════════════════════════════════════════ -->
+<section class="method" id="method">
+  <div class="method__ghost">
+    <img src="images/enso-gold.png" alt="">
+  </div>
+  <div class="container">
+    <div class="method__header reveal">
+      <p class="method__eyebrow"><span class="eyebrow eyebrow--light">02 — The M2C Method</span></p>
+      <h2 class="method__title">Four stages from<br><em>pain to performance.</em></h2>
+      <p class="method__sub">A structured journey that takes each client from confusion and fear to freedom of movement — grounded in pain neuroscience, Rolfing®, and strength training.</p>
+    </div>
+
+    <div class="method__steps reveal rd-1">
+      <div class="method__step">
+        <p class="method__step-num">01</p>
+        <h3 class="method__step-name">Aware</h3>
+        <span class="method__step-tag">Clarity · Education</span>
+        <p class="method__step-text">You arrive with unclear diagnoses, afraid to move. Understanding why pain exists is the first step in its resolution.</p>
+        <p class="method__step-client">"Someone finally explained what's happening to me."</p>
+      </div>
+      <div class="method__step">
+        <p class="method__step-num">02</p>
+        <h3 class="method__step-name">Restore</h3>
+        <span class="method__step-tag">Safety · Reconnection</span>
+        <p class="method__step-text">Reprogramming of the nervous system. Your body receives signals of safety and learns that movement is not a threat. Trust returns.</p>
+        <p class="method__step-client">"I trust my body again."</p>
+      </div>
+      <div class="method__step">
+        <p class="method__step-num">03</p>
+        <h3 class="method__step-name">Build</h3>
+        <span class="method__step-tag">Strength · Resilience</span>
+        <p class="method__step-text">Progressive construction of adaptive capacity. Your body doesn't just stop hurting — it becomes stronger and more functional than before.</p>
+        <p class="method__step-client">"I'm stronger now than before I got injured."</p>
+      </div>
+      <div class="method__step">
+        <p class="method__step-num">04</p>
+        <h3 class="method__step-name">Perform</h3>
+        <span class="method__step-tag">Freedom · Performance</span>
+        <p class="method__step-text">You live without fear. Run, play, return to sports, do whatever you want. Identity has shifted: from fragile to capable — permanently.</p>
+        <p class="method__step-client">"I'm back to who I was — but better."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT — Story + Team
+     ═══════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about__header reveal">
+      <span class="hr-line"></span>
+      <p class="eyebrow">03 — Meet the team</p>
+      <h2 class="about__title">Two physiotherapists.<br>One <em>shared belief.</em></h2>
+      <p class="about__intro">Jackeline and Jeymison are a married couple, both physiotherapists from Brazil, who built Move Two Cure around a simple idea: the body doesn't need fixing. It needs information.</p>
+    </div>
+
+    <div class="bios">
+      <!-- Jackeline -->
+      <div class="bio">
+        <div class="bio__photo-wrap reveal">
+          <div class="bio__photo-accent"></div>
+          <div class="bio__photo">
+            <img src="images/jackeline-rolfing-hero.jpg" alt="Jackeline Morais, Certified Rolfer and Physiotherapist">
+          </div>
+        </div>
+        <div class="bio__text reveal rd-1">
+          <span class="bio__role">Co-founder · Certified Rolfer®</span>
+          <h3 class="bio__name">Jackeline Morais</h3>
+          <p class="bio__specialty">Physiotherapist · Rolfer® · Movement Reeducation</p>
+          <p class="bio__paragraph">Jackeline's passion began in 2008, when she graduated as a Physiotherapist in Brazil. Early on, she was drawn to the deep impact chronic pain has on people's lives — and the gap between how medicine treats it and how the body actually responds.</p>
+          <p class="bio__paragraph">In 2015, she discovered Rolfing® Structural Integration. After nearly three years of intensive certification, Rolfing® became her calling — guiding hundreds of individuals through a process that combines manual depth with embodied awareness.</p>
+
+          <div class="bio__credentials">
+            <div class="bio__credential">
+              <span class="bio__credential-dot"></span>
+              <span class="bio__credential-text"><b>Physiotherapist</b> · Brazil, 2008</span>
+            </div>
+            <div class="bio__credential">
+              <span class="bio__credential-dot"></span>
+              <span class="bio__credential-text"><b>Master's</b> in Manual Therapy</span>
+            </div>
+            <div class="bio__credential">
+              <span class="bio__credential-dot"></span>
+              <span class="bio__credential-text"><b>Certified Rolfer®</b> · Dr. Ida Rolf Institute</span>
+            </div>
+            <div class="bio__credential">
+              <span class="bio__credential-dot"></span>
+              <span class="bio__credential-text"><b>Active Care Physio</b> · London, ON</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jeymison -->
+      <div class="bio bio--reverse">
+        <div class="bio__photo-wrap reveal">
+          <div class="bio__photo-accent"></div>
+          <div class="bio__photo">
+            <img src="images/jeymison-coaching.jpg" alt="Jeymison Morais coaching a client">
+          </div>
+        </div>
+        <div class="bio__text reveal rd-1">
+          <span class="bio__role">Co-founder · Physiotherapist & Personal Trainer</span>
+          <h3 class="bio__name">Jeymison Morais</h3>
+          <p class="bio__specialty">Physiotherapist · Personal Trainer · Sports Rehabilitation</p>
+          <p class="bio__paragraph">As a physiotherapist in Brazil for 14 years, Jeymison dedicated himself to understanding the human body at the edge of performance — and the moment when performance breaks into injury.</p>
+          <p class="bio__paragraph">His commitment to evidence-based rehabilitation led him to pursue a Master's in Acupuncture and complete extensive training in Osteopathy. Moving to Canada opened a new chapter as a Personal Trainer, where his physiotherapy background allows him to assess and coach with precision — identifying dysfunction before it becomes pain.</p>
+
+          <div class="bio__credentials">
+            <div class="bio__credential">
+              <span class="bio__credential-dot"></span>
+              <span class="bio__credential-text"><b>Physiotherapist</b> · Brazil, 14 years</span>
+            </div>
+            <div class="bio__credential">
+              <span class="bio__credential-dot"></span>
+              <span class="bio__credential-text"><b>Master's</b> in Acupuncture</span>
+            </div>
+            <div class="bio__credential">
+              <span class="bio__credential-dot"></span>
+              <span class="bio__credential-text"><b>Osteopathy</b> training</span>
+            </div>
+            <div class="bio__credential">
+              <span class="bio__credential-dot"></span>
+              <span class="bio__credential-text"><b>Personal Trainer</b> · London, ON</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SERVICES
+     ═══════════════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services__header reveal">
+      <span class="hr-line"></span>
+      <p class="eyebrow" style="margin-bottom:20px">04 — Services</p>
+      <h2 class="h-section">Two specialists.<br><em>One integrated system.</em></h2>
+      <p class="lead muted" style="margin-top:20px;max-width:580px;margin-left:auto;margin-right:auto">Jackeline and Jeymison work in complementary practices that together form a unique methodology of human movement.</p>
+    </div>
+
+    <div class="services__grid">
+      <div class="service-card reveal rd-1">
+        <div class="service-card__img">
+          <img src="images/jackeline-rolfing-hero.jpg" alt="Jackeline applying Rolfing structural integration">
+        </div>
+        <div class="service-card__body">
+          <p class="service-card__tag">Jackeline · Certified Rolfer®</p>
+          <h3 class="service-card__title">Rolfing® Structural Integration</h3>
+          <p class="service-card__desc">Deep myofascial work combined with movement reeducation. Releases chronic tension, reorganizes posture, and restores natural movement — the foundation before strength.</p>
+          <ul class="service-card__features">
+            <li>The Rolfing® Ten-Series or tailored sessions</li>
+            <li>Manual therapy + movement reeducation</li>
+            <li>Immediate pain relief, long-term results</li>
+          </ul>
+          <div class="service-card__footer">
+            <span class="service-card__who">For chronic pain, posture, structural reorganization</span>
+            <a href="#rolfing" class="service-card__link">
+              Explore
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card reveal rd-2">
+        <div class="service-card__img">
+          <img src="images/jeymison-training.jpg" alt="Jeymison coaching movement correction">
+        </div>
+        <div class="service-card__body">
+          <p class="service-card__tag">Jeymison · Physio & Personal Trainer</p>
+          <h3 class="service-card__title">Strength & Movement Training</h3>
+          <p class="service-card__desc">Structured progression of strength, mobility, and functional performance. Evidence-based programming designed by a physiotherapist's eye — intelligent movement, longevity, and peak capacity.</p>
+          <ul class="service-card__features">
+            <li>In-person · Online · Hybrid formats</li>
+            <li>Individual assessment before every plan</li>
+            <li>For rehab, performance, and pain prevention</li>
+          </ul>
+          <div class="service-card__footer">
+            <span class="service-card__who">For strength, longevity, rehab, online coaching</span>
+            <a href="#training" class="service-card__link">
+              Explore
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS — 4 client stories carousel
+     ═══════════════════════════════════════════ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials__header reveal">
+      <span class="hr-line hr-line--center"></span>
+      <p class="eyebrow">05 — What our clients say</p>
+      <h2 class="testimonials__title">Real stories.<br><em>Real transformations.</em></h2>
+    </div>
+  </div>
+
+  <!-- NOTE: Replace the placeholder testimonials below with real client quotes when ready -->
+  <div class="testimonial-track" id="testimonialTrack">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-card__stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+      </div>
+      <p class="testimonial-card__quote">After years of chronic back pain and countless treatments that only masked the symptoms, the M2C Method was the first approach that actually taught me why my pain was there — and how to move past it. I'm back to running, playing with my kids, and living fully.</p>
+      <div class="testimonial-card__author">
+        <span class="testimonial-card__name">Sarah M.</span>
+        <span class="testimonial-card__meta">London, ON · Chronic back pain recovery</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal rd-1">
+      <div class="testimonial-card__stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+      </div>
+      <p class="testimonial-card__quote">Jackeline's Rolfing sessions changed how I inhabit my body. After the Ten-Series, my posture, sleep, and overall sense of ease are completely different. She explains every step so you understand what your body is doing. A true expert.</p>
+      <div class="testimonial-card__author">
+        <span class="testimonial-card__name">Michael T.</span>
+        <span class="testimonial-card__meta">London, ON · Rolfing® Ten-Series</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal rd-2">
+      <div class="testimonial-card__stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+      </div>
+      <p class="testimonial-card__quote">I came in with a shoulder injury that kept me out of the gym for 8 months. Jeymison built a program that rebuilt not just the strength but my confidence in the movement. Six months later I'm lifting heavier than before — with zero pain.</p>
+      <div class="testimonial-card__author">
+        <span class="testimonial-card__name">David K.</span>
+        <span class="testimonial-card__meta">London, ON · Strength rehabilitation</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal rd-3">
+      <div class="testimonial-card__stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+      </div>
+      <p class="testimonial-card__quote">As someone over 40 balancing a busy job and family, finding training that actually respected my body was everything. The online program adapts to my schedule and my history. I feel stronger now than I did at 30.</p>
+      <div class="testimonial-card__author">
+        <span class="testimonial-card__name">Amanda R.</span>
+        <span class="testimonial-card__meta">Toronto, ON · Online Training</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonial-nav">
+    <button class="testimonial-nav__btn" onclick="scrollTestimonials(-1)" aria-label="Previous testimonial">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="testimonial-nav__btn" onclick="scrollTestimonials(1)" aria-label="Next testimonial">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ROLFING IN DEPTH
+     ═══════════════════════════════════════════ -->
+<section class="rolfing-sec" id="rolfing">
+  <div class="container">
+    <div class="rolfing-sec__header">
+      <div class="reveal">
+        <span class="hr-line"></span>
+        <p class="eyebrow" style="margin-bottom:16px">06 — Rolfing® in depth</p>
+        <h2 class="rolfing-sec__heading">A conversation with<br>your body's <em>architecture.</em></h2>
+      </div>
+      <div class="reveal rd-1">
+        <p class="rolfing-sec__paragraph">Developed by Dr. Ida Rolf, <strong>Rolfing® Structural Integration works with the fascia</strong> — the three-dimensional web of connective tissue that surrounds every muscle and joint. When fascia becomes dense or misaligned, it creates chronic tension, postural compensations, and pain that other therapies struggle to resolve.</p>
+        <p class="rolfing-sec__paragraph">Rolfing® combines deep manual therapy with movement reeducation. The manual component releases restrictions; the movement component teaches new patterns of alignment and ease. Together, they don't just treat symptoms — they reorganize how you inhabit your body.</p>
+      </div>
+    </div>
+
+    <div class="rolfing-sec__media">
+      <div class="rolfing-sec__img reveal">
+        <img src="images/jackeline-rolfing-method.jpg" alt="Jackeline performing manual fascial work">
+      </div>
+      <div class="rolfing-sec__components reveal rd-1">
+        <div class="component-item">
+          <p class="component-item__tag">Manual Therapy</p>
+          <h3 class="component-item__title">Deep fascial work</h3>
+          <p class="component-item__text">Precise, deep manipulation that releases tension and restrictions in the myofascial network. Produces immediate increases in range of motion and noticeable pain relief from the very first session.</p>
+        </div>
+        <div class="component-item">
+          <p class="component-item__tag">Movement Reeducation</p>
+          <h3 class="component-item__title">New patterns, new possibilities</h3>
+          <p class="component-item__text">The dynamic side of the work. Focused on posture, body awareness, and optimizing functional movement. Prevents relapses and ensures long-term results that extend far beyond the session.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits-grid reveal">
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20" stroke-linecap="round"/><circle cx="12" cy="12" r="5"/></svg>
+        </div>
+        <h3 class="benefit__title">Chronic pain relief</h3>
+        <p class="benefit__text">Addresses the root causes of persistent pain by resolving the fascial tensions and postural patterns that create it.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+        </div>
+        <h3 class="benefit__title">Greater range of motion</h3>
+        <p class="benefit__text">Restrictions release. Joints move more freely. Your body rediscovers movements it had forgotten were possible.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M7 7l10 10M7 17L17 7" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="benefit__title">Improved posture</h3>
+        <p class="benefit__text">Fascial reorganization leads to natural postural alignment — not forced correction. You stand, walk, and breathe differently.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21c-3-4-3-10 0-14 3-4 8-4 11 0" stroke-linecap="round"/><circle cx="8" cy="21" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <h3 class="benefit__title">Body awareness</h3>
+        <p class="benefit__text">You start to feel the subtle patterns you didn't notice before — and gain the tools to change them consciously.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c3-5 9-5 12 0-3 5-9 5-12 0z"/><path d="M12 3c5 3 5 9 0 12" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="benefit__title">Tension release</h3>
+        <p class="benefit__text">Muscle fatigue, tightness, and holding patterns that accumulate over years begin to dissolve — often permanently.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="benefit__title">Better sleep quality</h3>
+        <p class="benefit__text">With the nervous system less activated and the body more at ease, sleep deepens. Recovery happens at a different level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TRAINING IN DEPTH
+     ═══════════════════════════════════════════ -->
+<section class="training-sec" id="training">
+  <div class="container">
+    <div class="training-sec__header">
+      <div class="reveal">
+        <span class="hr-line"></span>
+        <p class="eyebrow" style="margin-bottom:16px">07 — Training in depth</p>
+        <h2 class="training-sec__heading">Train with the eye<br>of a <em>physiotherapist.</em></h2>
+      </div>
+      <div class="reveal rd-1">
+        <p class="training-sec__paragraph">Most personal training fixes what's broken, temporarily. <strong>We train the body to stop breaking.</strong> Each plan is built on an assessment that maps how you move, where you compensate, and what your body needs to perform without pain.</p>
+        <p class="training-sec__paragraph">With 14 years as a physiotherapist in Brazil — plus a Master's in Acupuncture and training in Osteopathy — Jeymison brings a clinical eye to every coaching session. You don't just get workouts. You get a program designed to correct dysfunction before it turns into injury.</p>
+      </div>
+    </div>
+
+    <div class="formats-grid reveal">
+      <div class="format-card">
+        <p class="format-card__tag">Format I</p>
+        <h3 class="format-card__title">In-person Training</h3>
+        <p class="format-card__desc">Real-time coaching with hands-on guidance. Ideal for those who want immediate technique feedback and in-person accountability.</p>
+        <ul class="format-card__features">
+          <li>Real-time corrections to perfect technique</li>
+          <li>Hands-on guidance and motivation</li>
+          <li>Sessions at your home, gym, or our space</li>
+        </ul>
+        <p class="format-card__for">For clients who thrive on in-person accountability</p>
+      </div>
+
+      <div class="format-card">
+        <p class="format-card__tag">Format II</p>
+        <h3 class="format-card__title">Online Training</h3>
+        <p class="format-card__desc">Maximum flexibility through our coaching app. Custom programs adapted to your schedule, with video demonstrations and direct chat with Jeymison.</p>
+        <ul class="format-card__features">
+          <li>Train from anywhere, on your own time</li>
+          <li>Fully personalized workout plans</li>
+          <li>Direct coach chat for feedback</li>
+        </ul>
+        <p class="format-card__for">For busy schedules and clients outside London, ON</p>
+      </div>
+
+      <div class="format-card">
+        <p class="format-card__tag">Format III</p>
+        <h3 class="format-card__title">Hybrid Training</h3>
+        <p class="format-card__desc">The best of both. Periodic in-person sessions for technique refinement, paired with online programming you follow between visits.</p>
+        <ul class="format-card__features">
+          <li>Online flexibility + in-person depth</li>
+          <li>Periodic technique refinement</li>
+          <li>Consistent progression between visits</li>
+        </ul>
+        <p class="format-card__for">For variable schedules that still value hands-on support</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq__grid">
+      <div class="faq__sidebar reveal">
+        <span class="hr-line"></span>
+        <p class="eyebrow" style="margin-bottom:18px">08 — Before you book</p>
+        <h2 class="faq__title">Common<br><em>questions.</em></h2>
+        <p class="faq__intro">If you can't find what you're looking for here, send us a message — we're happy to answer directly.</p>
+      </div>
+
+      <div class="faq__list reveal rd-1">
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Do you offer a free consultation?
+            <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-item__answer">Yes. Every new client starts with a <strong>free 15-minute consultation call</strong> — whether by phone or video. It's a short conversation to understand your situation, answer your questions, and direct you to the best path forward. No commitment required.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            What's the difference between Rolfing® and massage or physiotherapy?
+            <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-item__answer">Rolfing® works specifically with <strong>the fascial network</strong> — the connective tissue that surrounds every structure in your body. Unlike massage (which mainly addresses muscle tension) or traditional physiotherapy (which targets specific joints or conditions), Rolfing® reorganizes the body as an integrated whole. It combines deep manual therapy with movement reeducation, which is why results tend to be longer-lasting.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            How many sessions will I need?
+            <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-item__answer">It depends on your goals. For Rolfing®, the classical <strong>Ten-Series</strong> is a complete structural reorganization. Many people also benefit from shorter non-standardized programs (3-5 sessions) focused on specific complaints. Training programs are typically structured in 8-12 week cycles. We'll discuss options during your free consultation.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Do you offer direct billing or accept insurance?
+            <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-item__answer">Rolfing® sessions through Active Care Physiotherapy are covered by most extended health plans in Ontario — typically under registered physiotherapy or massage therapy benefits. We provide receipts for reimbursement. <strong>Ask during your free consultation</strong> and we'll clarify what applies to your specific plan.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Do I need to be an athlete to train with Jeymison?
+            <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-item__answer">Not at all. Most of our clients aren't competitive athletes. They're <strong>people who want to move well, feel strong, and live without chronic pain</strong> — whether that means returning to a sport, getting back into training after a pause, or simply being able to do daily activities without their body complaining. Every program is built around where you are, not where an athlete would be.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Can I do both Rolfing® and Training?
+            <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-item__answer">Absolutely — and for many people, that's the most powerful combination. Rolfing® reorganizes structure; Training builds capacity on top of that new structure. The two practices work in dialogue, and the results compound. We'll help you sequence them correctly based on your priorities.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Do you work with people outside London, Ontario?
+            <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-item__answer">Yes — <strong>online training with Jeymison</strong> is available anywhere. We also welcome visitors to London, ON for intensive Rolfing® sessions if you're willing to travel. Reach out and we'll find the format that works.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+     ═══════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__header reveal">
+      <span class="hr-line hr-line--center"></span>
+      <p class="eyebrow">09 — Get in touch</p>
+      <h2 class="contact__title">Every journey starts with<br>a <em>conversation.</em></h2>
+      <p class="contact__sub">Tell us a bit about where you are and what you want to change. We'll get back within 24 hours to schedule a free 15-minute consultation — no commitment, just clarity about whether our approach is the right fit.</p>
+    </div>
+
+    <div class="contact__grid">
+      <!-- FORM -->
+      <div class="contact__form-card reveal">
+        <h2 class="contact__form-title">Send us a message</h2>
+        <p class="contact__form-sub">We reply within 24 hours on business days.</p>
+
+        <!-- Form success message (shows after successful submission) -->
+        <div class="contact__success" id="formSuccess">
+          <div class="contact__success-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p class="contact__success-title">Message received</p>
+          <p class="contact__success-text">Thank you. We'll get back to you within 24 hours to schedule your free consultation call.</p>
+        </div>
+
+        <!--
+        Formspree endpoint: submissions currently routed to focusmedmarketing@gmail.com.
+        TODO: once movetwocure@gmail.com verifies the linked-email invite, switch the
+        destination inside the Formspree dashboard (Settings → Notifications).
+        Free plan: 50 submissions/month.
+        -->
+        <form id="contactForm" action="https://formspree.io/f/mdayywaw" method="POST" onsubmit="handleFormSubmit(event)">
+          <!-- Honeypot: hidden from users, auto-rejected by Formspree if filled -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+          <p style="font-size:11px;letter-spacing:1.5px;color:var(--text-muted);text-transform:uppercase;font-weight:500;margin-bottom:12px">What are you interested in?</p>
+          <div class="contact__segments">
+            <button type="button" class="contact__segment is-active" data-value="Rolfing" onclick="selectSegment(this)">Rolfing®</button>
+            <button type="button" class="contact__segment" data-value="Training" onclick="selectSegment(this)">Training</button>
+            <button type="button" class="contact__segment" data-value="Summer Series" onclick="selectSegment(this)">Summer Series</button>
+            <button type="button" class="contact__segment" data-value="General inquiry" onclick="selectSegment(this)">General inquiry</button>
+          </div>
+          <input type="hidden" name="interest" id="segmentInput" value="Rolfing">
+
+          <div class="contact__row">
+            <div class="contact__field">
+              <label for="firstName">First name</label>
+              <input type="text" name="firstName" id="firstName" placeholder="Your first name" required>
+            </div>
+            <div class="contact__field">
+              <label for="lastName">Last name</label>
+              <input type="text" name="lastName" id="lastName" placeholder="Your last name" required>
+            </div>
+          </div>
+
+          <div class="contact__row">
+            <div class="contact__field">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="you@email.com" required>
+            </div>
+            <div class="contact__field">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" name="phone" id="phone" placeholder="+1 (___) ___-____">
+            </div>
+          </div>
+
+          <div class="contact__row">
+            <div class="contact__field contact__field--full">
+              <label for="message">Tell us a bit about what brings you here</label>
+              <textarea name="message" id="message" placeholder="Current pain, goals, history, questions..." required></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--primary contact__submit">
+            Send Message
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="contact__note">By sending, you agree to be contacted by M2C · No spam, ever</p>
+        </form>
+      </div>
+
+      <!-- INFO SIDEBAR -->
+      <aside class="contact__info">
+        <div class="info-card reveal rd-1">
+          <p class="info-card__tag">Direct contact</p>
+          <h3 class="info-card__title">Get in touch</h3>
+          <div class="info-card__item">
+            <div class="info-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 006 6L15 14l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <span class="info-card__label">Phone</span>
+              <span class="info-card__value"><a href="tel:+12269987843">+1 (226) 998-7843</a></span>
+            </div>
+          </div>
+          <div class="info-card__item">
+            <div class="info-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </div>
+            <div>
+              <span class="info-card__label">Email</span>
+              <span class="info-card__value"><a href="mailto:movetwocure@gmail.com">movetwocure@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="info-card__item">
+            <div class="info-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div>
+              <span class="info-card__label">Location</span>
+              <span class="info-card__value">London, Ontario<br>Canada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card reveal rd-2">
+          <p class="info-card__tag">Office hours</p>
+          <h3 class="info-card__title">When we're available</h3>
+          <div class="hours-grid">
+            <span class="hours-grid__day">Monday — Friday</span>
+            <span class="hours-grid__time">8am — 7pm</span>
+            <span class="hours-grid__day">Saturday</span>
+            <span class="hours-grid__time">9am — 2pm</span>
+            <span class="hours-grid__day">Sunday</span>
+            <span class="hours-grid__time">Closed</span>
+          </div>
+          <p style="margin-top:20px;padding-top:18px;border-top:1px solid var(--border-soft);font-size:12px;color:var(--text-muted);line-height:1.65">
+            Online training sessions can be scheduled outside standard hours to accommodate your time zone.
+          </p>
+        </div>
+
+        <div class="info-card reveal rd-3">
+          <p class="info-card__tag">Social</p>
+          <h3 class="info-card__title">Follow the work</h3>
+          <p style="font-size:13px;color:var(--text-body);line-height:1.65;margin-bottom:16px">Educational content, behind-the-scenes, and movement tips.</p>
+          <div class="info-socials">
+            <a href="https://www.instagram.com/move2cure" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+            </a>
+            <a href="#" target="_blank" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-3h-2.7V9.1c0-.9.3-1.5 1.6-1.5h1.2V5c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3V11H9v3h2.2v7h2.3z"/></svg>
+            </a>
+            <a href="mailto:movetwocure@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FINAL CTA
+     ═══════════════════════════════════════════ -->
+<section class="final-cta">
+  <div class="final-cta__ghost">
+    <img src="images/enso-gold.png" alt="">
+  </div>
+  <div class="container final-cta__content">
+    <p class="final-cta__eyebrow reveal"><span class="eyebrow eyebrow--light">Your next step</span></p>
+    <h2 class="final-cta__title reveal rd-1">Your body didn't<br>fail you.<br><em>It protected you.</em></h2>
+    <p class="final-cta__sub reveal rd-2">Now it's time to learn a new story — where movement is safe, strength is possible, and freedom is the destination.</p>
+    <div class="final-cta__actions reveal rd-3">
+      <a href="#contact" class="btn btn--gold">
+        Book Free Consultation
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#about" class="btn btn--light">Meet Jackeline & Jeymison</a>
+    </div>
+    <p class="final-cta__note reveal rd-4">15-minute call · No commitment · London, ON</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="images/logo-gold-horizontal.png" alt="Move two cure">
+        </div>
+        <p class="footer__tagline">Movement is information.<br>Your body learns to move without fear again.</p>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/move2cure" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+          </a>
+          <a href="#" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-3h-2.7V9.1c0-.9.3-1.5 1.6-1.5h1.2V5c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3V11H9v3h2.2v7h2.3z"/></svg>
+          </a>
+          <a href="mailto:movetwocure@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Explore</p>
+        <ul class="footer__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#rolfing">Rolfing®</a></li>
+          <li><a href="#training">Training</a></li>
+          <li><a href="#contact">Book Consultation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Resources</p>
+        <ul class="footer__links">
+          <li><a href="#">Summer Series</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Move Again — free guide</a></li>
+          <li><a href="#">7 Days to Restart</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Contact</p>
+        <p class="footer__contact-item"><strong>Phone</strong><br>+1 (226) 998-7843</p>
+        <p class="footer__contact-item" style="margin-top:14px"><strong>Email</strong><br>movetwocure@gmail.com</p>
+        <p class="footer__contact-item" style="margin-top:14px"><strong>Location</strong><br>London, Ontario, Canada</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Move Two Cure · All rights reserved</p>
+      <p class="footer__location">London · Ontario · Canada</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+<script>
+  // Reveal animations on scroll
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('up'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
+
+  // Testimonial carousel navigation
+  function scrollTestimonials(direction) {
+    const track = document.getElementById('testimonialTrack');
+    const cardWidth = track.querySelector('.testimonial-card').offsetWidth + 28;
+    track.scrollBy({ left: cardWidth * direction, behavior: 'smooth' });
+  }
+
+  // Segment selection for contact form
+  function selectSegment(btn) {
+    document.querySelectorAll('.contact__segment').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    document.getElementById('segmentInput').value = btn.dataset.value;
+  }
+
+  // Form submission handler
+  async function handleFormSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const successDiv = document.getElementById('formSuccess');
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successDiv.classList.add('is-visible');
+        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        alert('Something went wrong. Please try again or email us directly at movetwocure@gmail.com');
+      }
+    } catch (err) {
+      alert('Connection error. Please try again or email us at movetwocure@gmail.com');
+    }
+  }
+</script>
+
+</body>
+</html>
