@@ -16,7 +16,8 @@ m2c_final/
 │   ├── couple-consultation.jpg     (unused - available for use)
 │   ├── logo-green-horizontal.png   (navbar)
 │   ├── logo-gold-horizontal.png    (footer)
-│   └── enso-gold.png               (accent/badge)
+│   ├── m-icon-green.png            (hero badge - light bg)
+│   └── m-icon-gold.png             (method/final-cta ghost - dark bg)
 └── README.md           # This file
 ```
 
