@@ -26,9 +26,9 @@
     </a>
     <ul class="nav__links">
       <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#rolfing">Rolfing®</a></li>
-      <li><a href="#training">Training</a></li>
+      <li><a href="#method">The Method</a></li>
+      <li><a href="#how-it-works">How it Works</a></li>
+      <li><a href="#paths">Paths</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -45,9 +45,9 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round"/><line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round"/></svg>
   </button>
   <a href="#about" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">About</a>
-  <a href="#services" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Services</a>
-  <a href="#rolfing" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Rolfing®</a>
-  <a href="#training" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Training</a>
+  <a href="#method" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">The Method</a>
+  <a href="#how-it-works" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">How it Works</a>
+  <a href="#paths" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Paths</a>
   <a href="#faq" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">FAQ</a>
   <a href="#contact" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Contact</a>
   <a href="#contact" class="mobile-menu__cta" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Book Free Consultation</a>
@@ -62,13 +62,13 @@
       <div class="hero__text">
         <p class="hero__eyebrow reveal"><span class="eyebrow">London · Ontario · Canada</span></p>
         <h1 class="hero__headline reveal rd-1">Move without<br>fear. <em>Live without<br>limits.</em></h1>
-        <p class="hero__sub reveal rd-2">We don't just treat pain — we teach your body that movement is safe again. Through Rolfing® and personalized training, built on movement science.</p>
+        <p class="hero__sub reveal rd-2">We don't treat pain in pieces. We rebuild how your body moves — through a single integrated method, guided by movement science.</p>
         <div class="hero__actions reveal rd-3">
           <a href="#contact" class="btn btn--primary">
-            Book Free Consultation
+            Book Your Free Consultation
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="#services" class="btn btn--ghost">Our Method</a>
+          <a href="#how-it-works" class="hero__link">How it works →</a>
         </div>
       </div>
       <!-- Hero photo — desktop: right column. Mobile: between buttons and trust numbers. -->
@@ -82,7 +82,7 @@
           </div>
           <div class="hero__badge-text">
             <b>Movement is Information</b>
-            <span>The M2C Method · since 2020</span>
+            <span>The M2C Method · Movement is information</span>
           </div>
         </div>
       </div>
@@ -188,18 +188,267 @@
   </div>
 </section>
 
-<!-- Mid-page CTA (after Method) -->
-<section class="mid-cta reveal">
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS — 4-step chronological timeline
+     ═══════════════════════════════════════════ -->
+<section class="how-it-works" id="how-it-works">
   <div class="container">
-    <div class="mid-cta__inner">
-      <div class="mid-cta__text">
-        <span class="mid-cta__eyebrow">Next step</span>
-        <p class="mid-cta__line">Ready to understand what your body is telling you?</p>
+    <div class="how-it-works__header reveal">
+      <span class="hr-line"></span>
+      <p class="eyebrow" style="margin-bottom:18px">How it works</p>
+      <h2 class="how-it-works__title">Your path with us is<br><em>clear from day one.</em></h2>
+      <p class="how-it-works__sub">Every transformation we guide follows the same intelligent structure. Four steps — designed so that nothing about your journey is left to guesswork.</p>
+    </div>
+
+    <div class="timeline reveal rd-1">
+      <div class="timeline__line" aria-hidden="true"></div>
+
+      <div class="timeline__step">
+        <div class="timeline__top">
+          <span class="timeline__num">01</span>
+          <div class="timeline__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <span class="timeline__tag">Free · 15 minutes · Phone or video</span>
+        <h3 class="timeline__title">Free Consultation</h3>
+        <p class="timeline__text">A short conversation to understand your situation. We listen, we ask the right questions, and we help you decide whether Move Two Cure is the path that fits — before you commit to anything. No pressure, no sales pitch.</p>
       </div>
+
+      <div class="timeline__step">
+        <div class="timeline__top">
+          <span class="timeline__num">02</span>
+          <div class="timeline__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="4" width="12" height="18" rx="2"/><path d="M9 4V2h6v2M9 11h6M9 15h4" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <span class="timeline__tag">Paid · 60 minutes · In-person · London, ON</span>
+        <h3 class="timeline__title">M2C Assessment</h3>
+        <p class="timeline__text">Your first paid session — and the actual starting point of the work. A complete evaluation: how you move, how you compensate, where pain shows up, what your body needs. From this single session, we map your personalized path.</p>
+      </div>
+
+      <div class="timeline__step">
+        <div class="timeline__top">
+          <span class="timeline__num">03</span>
+          <div class="timeline__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4v3c0 5 6 5 6 10v3M18 4v3c0 5-6 5-6 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <span class="timeline__tag">Tailored · Rolfing® · Training · Or both</span>
+        <h3 class="timeline__title">Your Path</h3>
+        <p class="timeline__text">Based on your Assessment, we design what comes next: Rolfing® for structural reorganization, Training for capacity and performance, or an integrated plan combining both. The path is personal — never generic.</p>
+      </div>
+
+      <div class="timeline__step">
+        <div class="timeline__top">
+          <span class="timeline__num">04</span>
+          <div class="timeline__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 19l6-10 4 6 3-4 5 8z" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <span class="timeline__tag">Permanent · Capable · Confident</span>
+        <h3 class="timeline__title">Your New Baseline</h3>
+        <p class="timeline__text">The version of you that moves without fear, lives without negotiation, and trusts the body again. Not a temporary fix — a new foundation. This is what "health" actually looks like.</p>
+      </div>
+    </div>
+
+    <div class="how-it-works__cta reveal rd-2">
+      <p class="how-it-works__cta-line">Start with Step 1 — it's free.</p>
       <a href="#contact" class="btn btn--primary">
-        Book Free Consultation
+        Book Your Free Consultation
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PATHS — Inside step 3: Rolfing & Training
+     ═══════════════════════════════════════════ -->
+<section class="paths" id="paths">
+  <div class="container">
+    <div class="paths__header reveal">
+      <span class="hr-line hr-line--center"></span>
+      <p class="eyebrow">Inside step 3</p>
+      <h2 class="paths__title">Two complementary paths.<br><em>One unified method.</em></h2>
+      <p class="paths__sub">After your Assessment, you'll begin one of these paths — or both, sequenced intentionally. Some clients start with Rolfing® to reorganize structure; others start with Training to rebuild capacity. The right choice is never guessed — it's revealed by your body during the Assessment.</p>
+    </div>
+
+    <div class="paths__grid">
+      <article class="path-card reveal rd-1" id="path-rolfing">
+        <p class="path-card__tag">Path I</p>
+        <h3 class="path-card__title">Rolfing® Structural Integration</h3>
+        <p class="path-card__subtitle">When the body is locked in patterns of protection</p>
+        <p class="path-card__lead">If chronic pain, postural tension, or limited mobility is keeping you small, Rolfing® reorganizes the fascial network that holds those patterns in place. Manual therapy combined with movement reeducation — changing how you inhabit your body, not just how it feels.</p>
+        <ul class="path-card__features">
+          <li>The Rolfing® Ten-Series or focused sessions</li>
+          <li>Manual therapy + movement reeducation</li>
+          <li>Led by Certified Rolfer® Jackeline Morais</li>
+        </ul>
+        <p class="path-card__for">For chronic pain, postural reorganization, pre/postnatal, recovery from injury.</p>
+        <a href="#rolfing-detail" class="path-card__link">
+          Learn more about Rolfing®
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="path-card reveal rd-2" id="path-training">
+        <p class="path-card__tag">Path II</p>
+        <h3 class="path-card__title">Strength & Movement Training</h3>
+        <p class="path-card__subtitle">When the body is ready to build capacity</p>
+        <p class="path-card__lead">If your body is ready to rebuild strength, recover from injury, or push performance further, Training is your path. Programs designed by a physiotherapist's eye — meaning every progression is built around how you actually move, not on a generic template.</p>
+        <ul class="path-card__features">
+          <li>In-person, online, or hybrid formats</li>
+          <li>Built on physiotherapy principles</li>
+          <li>Led by Jeymison Morais, Physio + Personal Trainer</li>
+        </ul>
+        <p class="path-card__for">For rehab, performance, longevity, online coaching, return-to-sport.</p>
+        <a href="#training-detail" class="path-card__link">
+          Learn more about Training
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+    </div>
+
+    <p class="paths__note reveal rd-3">Most clients integrate both paths over time — and that's where the deepest transformations happen. Your Assessment will guide the sequence.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ROLFING IN DEPTH
+     ═══════════════════════════════════════════ -->
+<section class="rolfing-sec" id="rolfing-detail">
+  <div class="container">
+    <div class="rolfing-sec__header">
+      <div class="reveal">
+        <span class="hr-line"></span>
+        <p class="eyebrow" style="margin-bottom:16px">Rolfing® in depth</p>
+        <h2 class="rolfing-sec__heading">A conversation with<br>your body's <em>architecture.</em></h2>
+      </div>
+      <div class="reveal rd-1">
+        <p class="rolfing-sec__paragraph">Developed by Dr. Ida Rolf, <strong>Rolfing® Structural Integration works with the fascia</strong> — the three-dimensional web of connective tissue that surrounds every muscle and joint. When fascia becomes dense or misaligned, it creates chronic tension, postural compensations, and pain that other therapies struggle to resolve.</p>
+        <p class="rolfing-sec__paragraph">Rolfing® combines deep manual therapy with movement reeducation. The manual component releases restrictions; the movement component teaches new patterns of alignment and ease. Together, they don't just treat symptoms — they reorganize how you inhabit your body.</p>
+      </div>
+    </div>
+
+    <div class="rolfing-sec__media">
+      <div class="rolfing-sec__img reveal">
+        <img src="images/jackeline-rolfing-method.jpg" alt="Jackeline performing manual fascial work">
+      </div>
+      <div class="rolfing-sec__components reveal rd-1">
+        <div class="component-item">
+          <p class="component-item__tag">Manual Therapy</p>
+          <h3 class="component-item__title">Deep fascial work</h3>
+          <p class="component-item__text">Precise, deep manipulation that releases tension and restrictions in the myofascial network. Produces immediate increases in range of motion and noticeable pain relief from the very first session.</p>
+        </div>
+        <div class="component-item">
+          <p class="component-item__tag">Movement Reeducation</p>
+          <h3 class="component-item__title">New patterns, new possibilities</h3>
+          <p class="component-item__text">The dynamic side of the work. Focused on posture, body awareness, and optimizing functional movement. Prevents relapses and ensures long-term results that extend far beyond the session.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits-grid reveal">
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20" stroke-linecap="round"/><circle cx="12" cy="12" r="5"/></svg>
+        </div>
+        <h3 class="benefit__title">Chronic pain relief</h3>
+        <p class="benefit__text">Addresses the root causes of persistent pain by resolving the fascial tensions and postural patterns that create it.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+        </div>
+        <h3 class="benefit__title">Greater range of motion</h3>
+        <p class="benefit__text">Restrictions release. Joints move more freely. Your body rediscovers movements it had forgotten were possible.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M7 7l10 10M7 17L17 7" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="benefit__title">Improved posture</h3>
+        <p class="benefit__text">Fascial reorganization leads to natural postural alignment — not forced correction. You stand, walk, and breathe differently.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21c-3-4-3-10 0-14 3-4 8-4 11 0" stroke-linecap="round"/><circle cx="8" cy="21" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <h3 class="benefit__title">Body awareness</h3>
+        <p class="benefit__text">You start to feel the subtle patterns you didn't notice before — and gain the tools to change them consciously.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c3-5 9-5 12 0-3 5-9 5-12 0z"/><path d="M12 3c5 3 5 9 0 12" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="benefit__title">Tension release</h3>
+        <p class="benefit__text">Muscle fatigue, tightness, and holding patterns that accumulate over years begin to dissolve — often permanently.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="benefit__title">Better sleep quality</h3>
+        <p class="benefit__text">With the nervous system less activated and the body more at ease, sleep deepens. Recovery happens at a different level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TRAINING IN DEPTH
+     ═══════════════════════════════════════════ -->
+<section class="training-sec" id="training-detail">
+  <div class="container">
+    <div class="training-sec__header">
+      <div class="reveal">
+        <span class="hr-line"></span>
+        <p class="eyebrow" style="margin-bottom:16px">Training in depth</p>
+        <h2 class="training-sec__heading">Train with the eye<br>of a <em>physiotherapist.</em></h2>
+      </div>
+      <div class="reveal rd-1">
+        <p class="training-sec__paragraph">Most personal training fixes what's broken, temporarily. <strong>We train the body to stop failing.</strong> Each plan is built on an assessment that maps how you move, where you compensate, and what your body needs to perform without pain.</p>
+        <p class="training-sec__paragraph">With 14 years as a physiotherapist in Brazil — plus a Master's in Acupuncture and training in Osteopathy — Jeymison brings a clinical eye to every coaching session. You don't just get workouts. You get a program designed to correct dysfunction before it turns into injury.</p>
+      </div>
+    </div>
+
+    <div class="formats-grid reveal">
+      <div class="format-card">
+        <p class="format-card__tag">Format I</p>
+        <h3 class="format-card__title">In-person Training</h3>
+        <p class="format-card__desc">Real-time coaching with hands-on guidance. Ideal for those who want immediate technique feedback and in-person accountability.</p>
+        <ul class="format-card__features">
+          <li>Real-time corrections to perfect technique</li>
+          <li>Hands-on guidance and motivation</li>
+          <li>Sessions at your home, gym, or our space</li>
+        </ul>
+        <p class="format-card__for">For clients who thrive on in-person accountability</p>
+      </div>
+
+      <div class="format-card">
+        <p class="format-card__tag">Format II</p>
+        <h3 class="format-card__title">Online Training</h3>
+        <p class="format-card__desc">Maximum flexibility through our coaching app. Custom programs adapted to your schedule, with video demonstrations and direct chat with Jeymison.</p>
+        <ul class="format-card__features">
+          <li>Train from anywhere, on your own time</li>
+          <li>Fully personalized workout plans</li>
+          <li>Direct coach chat for feedback</li>
+        </ul>
+        <p class="format-card__for">For busy schedules and clients outside London, ON</p>
+      </div>
+
+      <div class="format-card">
+        <p class="format-card__tag">Format III</p>
+        <h3 class="format-card__title">Hybrid Training</h3>
+        <p class="format-card__desc">The best of both. Periodic in-person sessions for technique refinement, paired with online programming you follow between visits.</p>
+        <ul class="format-card__features">
+          <li>Online flexibility + in-person depth</li>
+          <li>Periodic technique refinement</li>
+          <li>Consistent progression between visits</li>
+        </ul>
+        <p class="format-card__for">For variable schedules that still value hands-on support</p>
+      </div>
     </div>
   </div>
 </section>
@@ -211,7 +460,7 @@
   <div class="container">
     <div class="about__header reveal">
       <span class="hr-line"></span>
-      <p class="eyebrow">03 — Meet the team</p>
+      <p class="eyebrow">Meet the team</p>
       <h2 class="about__title">Two physiotherapists.<br>One <em>shared belief.</em></h2>
       <p class="about__intro">Jackeline and Jeymison are a married couple, both physiotherapists from Brazil, who built Move Two Cure around a simple idea: the body doesn't need fixing. It needs information.</p>
     </div>
@@ -293,96 +542,18 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SERVICES
-     ═══════════════════════════════════════════ -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="services__header reveal">
-      <span class="hr-line"></span>
-      <p class="eyebrow" style="margin-bottom:20px">04 — Services</p>
-      <h2 class="h-section">Two specialists.<br><em>One integrated system.</em></h2>
-      <p class="lead muted" style="margin-top:20px;max-width:580px;margin-left:auto;margin-right:auto">Jackeline and Jeymison work in complementary practices that together form a unique methodology of human movement.</p>
-    </div>
-
-    <div class="services__grid">
-      <div class="service-card reveal rd-1">
-        <div class="service-card__img">
-          <img src="images/jackeline-rolfing-hero.jpg" alt="Jackeline applying Rolfing structural integration">
-        </div>
-        <div class="service-card__body">
-          <p class="service-card__tag">Jackeline · Certified Rolfer®</p>
-          <h3 class="service-card__title">Rolfing® Structural Integration</h3>
-          <p class="service-card__desc">Deep myofascial work combined with movement reeducation. Releases chronic tension, reorganizes posture, and restores natural movement — the foundation before strength.</p>
-          <ul class="service-card__features">
-            <li>The Rolfing® Ten-Series or tailored sessions</li>
-            <li>Manual therapy + movement reeducation</li>
-            <li>Immediate pain relief, long-term results</li>
-          </ul>
-          <div class="service-card__footer">
-            <span class="service-card__who">For chronic pain, posture, structural reorganization</span>
-            <a href="#rolfing" class="service-card__link">
-              Explore
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card reveal rd-2">
-        <div class="service-card__img service-card__img--contain">
-          <img src="images/jeymison-training.jpg" alt="Jeymison coaching movement correction">
-        </div>
-        <div class="service-card__body">
-          <p class="service-card__tag">Jeymison · Physio & Personal Trainer</p>
-          <h3 class="service-card__title">Strength & Movement Training</h3>
-          <p class="service-card__desc">Structured progression of strength, mobility, and functional performance. Evidence-based programming designed by a physiotherapist's eye — intelligent movement, longevity, and peak capacity.</p>
-          <ul class="service-card__features">
-            <li>In-person · Online · Hybrid formats</li>
-            <li>Individual assessment before every plan</li>
-            <li>For rehab, performance, and pain prevention</li>
-          </ul>
-          <div class="service-card__footer">
-            <span class="service-card__who">For strength, longevity, rehab, online coaching</span>
-            <a href="#training" class="service-card__link">
-              Explore
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Mid-page CTA (after Services) -->
-<section class="mid-cta mid-cta--alt reveal">
-  <div class="container">
-    <div class="mid-cta__inner">
-      <div class="mid-cta__text">
-        <span class="mid-cta__eyebrow">Not sure where to start?</span>
-        <p class="mid-cta__line">Not sure which path is right for you?<span class="mid-cta__sub">Start with a free 15-minute consultation — we'll help you find the right fit.</span></p>
-      </div>
-      <a href="#contact" class="btn btn--primary">
-        Book Free Consultation
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     TESTIMONIALS — 4 client stories carousel
+     TESTIMONIALS — Real client stories carousel
      ═══════════════════════════════════════════ -->
 <section class="testimonials" id="testimonials">
   <div class="container">
     <div class="testimonials__header reveal">
       <span class="hr-line hr-line--center"></span>
-      <p class="eyebrow">05 — What our clients say</p>
+      <p class="eyebrow">What our clients say</p>
       <h2 class="testimonials__title">Real stories.<br><em>Real transformations.</em></h2>
     </div>
   </div>
 
-  <!-- NOTE: Replace the placeholder testimonials below with real client quotes when ready -->
+  <!-- NOTE: Cards 1 and 3 below remain placeholders pending real testimonials from João -->
   <div class="testimonial-track" id="testimonialTrack">
     <div class="testimonial-card reveal">
       <div class="testimonial-card__stars">
@@ -407,10 +578,10 @@
         <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
         <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
       </div>
-      <p class="testimonial-card__quote">Jackeline's Rolfing sessions changed how I inhabit my body. After the Ten-Series, my posture, sleep, and overall sense of ease are completely different. She explains every step so you understand what your body is doing. A true expert.</p>
+      <p class="testimonial-card__quote">Going through the Rolfing process with Jack was a much deeper experience than I expected. Beyond the physical benefits — like feeling lighter, more open, and free in my body after each session — what stood out most was the awareness I gained.<br><br>For the first time, I was able to understand how posture, tension, and even emotional patterns are connected. It was truly a process of self-discovery.<br><br>Jack is an incredibly dedicated and skilled professional. You can feel the care and knowledge she brings into every session, and the exercises she provides really help maintain the results. Her calm presence makes a big difference.<br><br>I'm very grateful and highly recommend her.</p>
       <div class="testimonial-card__author">
-        <span class="testimonial-card__name">Michael T.</span>
-        <span class="testimonial-card__meta">London, ON · Rolfing® Ten-Series</span>
+        <span class="testimonial-card__name">Rolfing® Client</span>
+        <span class="testimonial-card__meta">Rolfing® Ten-Series · London, ON</span>
       </div>
     </div>
 
@@ -437,10 +608,10 @@
         <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
         <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
       </div>
-      <p class="testimonial-card__quote">As someone over 40 balancing a busy job and family, finding training that actually respected my body was everything. The online program adapts to my schedule and my history. I feel stronger now than I did at 30.</p>
+      <p class="testimonial-card__quote">When I started training, my body felt it quite a bit — I hadn't been physically active for 3 years. But, little by little, my energy and my daily life began to change. I gained more energy each week.<br><br>Today everything has changed. I have more energy, I pay more attention to my diet, and my pain has greatly reduced. We're still working on my lower back, because sometimes it 'says hello' — mainly because of my work — but the activity has been fundamental to improving it.<br><br>I exercise out of love for myself. I am the only one who can change this. It's not easy, it requires discipline and willpower, but when you look back and see how much you've evolved, it's totally worth it. For my physical and mental health. Healthy body, healthy mind. Thank you, Jey and Jack. Move 2 Cure is all about that!</p>
       <div class="testimonial-card__author">
-        <span class="testimonial-card__name">Amanda R.</span>
-        <span class="testimonial-card__meta">Toronto, ON · Online Training</span>
+        <span class="testimonial-card__name">Melania Daleprane</span>
+        <span class="testimonial-card__meta">Personal Training · London, ON</span>
       </div>
     </div>
   </div>
@@ -456,161 +627,6 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     ROLFING IN DEPTH
-     ═══════════════════════════════════════════ -->
-<section class="rolfing-sec" id="rolfing">
-  <div class="container">
-    <div class="rolfing-sec__header">
-      <div class="reveal">
-        <span class="hr-line"></span>
-        <p class="eyebrow" style="margin-bottom:16px">06 — Rolfing® in depth</p>
-        <h2 class="rolfing-sec__heading">A conversation with<br>your body's <em>architecture.</em></h2>
-      </div>
-      <div class="reveal rd-1">
-        <p class="rolfing-sec__paragraph">Developed by Dr. Ida Rolf, <strong>Rolfing® Structural Integration works with the fascia</strong> — the three-dimensional web of connective tissue that surrounds every muscle and joint. When fascia becomes dense or misaligned, it creates chronic tension, postural compensations, and pain that other therapies struggle to resolve.</p>
-        <p class="rolfing-sec__paragraph">Rolfing® combines deep manual therapy with movement reeducation. The manual component releases restrictions; the movement component teaches new patterns of alignment and ease. Together, they don't just treat symptoms — they reorganize how you inhabit your body.</p>
-      </div>
-    </div>
-
-    <div class="rolfing-sec__media">
-      <div class="rolfing-sec__img reveal">
-        <img src="images/jackeline-rolfing-method.jpg" alt="Jackeline performing manual fascial work">
-      </div>
-      <div class="rolfing-sec__components reveal rd-1">
-        <div class="component-item">
-          <p class="component-item__tag">Manual Therapy</p>
-          <h3 class="component-item__title">Deep fascial work</h3>
-          <p class="component-item__text">Precise, deep manipulation that releases tension and restrictions in the myofascial network. Produces immediate increases in range of motion and noticeable pain relief from the very first session.</p>
-        </div>
-        <div class="component-item">
-          <p class="component-item__tag">Movement Reeducation</p>
-          <h3 class="component-item__title">New patterns, new possibilities</h3>
-          <p class="component-item__text">The dynamic side of the work. Focused on posture, body awareness, and optimizing functional movement. Prevents relapses and ensures long-term results that extend far beyond the session.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefits-grid reveal">
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20" stroke-linecap="round"/><circle cx="12" cy="12" r="5"/></svg>
-        </div>
-        <h3 class="benefit__title">Chronic pain relief</h3>
-        <p class="benefit__text">Addresses the root causes of persistent pain by resolving the fascial tensions and postural patterns that create it.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
-        </div>
-        <h3 class="benefit__title">Greater range of motion</h3>
-        <p class="benefit__text">Restrictions release. Joints move more freely. Your body rediscovers movements it had forgotten were possible.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M7 7l10 10M7 17L17 7" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="benefit__title">Improved posture</h3>
-        <p class="benefit__text">Fascial reorganization leads to natural postural alignment — not forced correction. You stand, walk, and breathe differently.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21c-3-4-3-10 0-14 3-4 8-4 11 0" stroke-linecap="round"/><circle cx="8" cy="21" r="1.5" fill="currentColor"/></svg>
-        </div>
-        <h3 class="benefit__title">Body awareness</h3>
-        <p class="benefit__text">You start to feel the subtle patterns you didn't notice before — and gain the tools to change them consciously.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c3-5 9-5 12 0-3 5-9 5-12 0z"/><path d="M12 3c5 3 5 9 0 12" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="benefit__title">Tension release</h3>
-        <p class="benefit__text">Muscle fatigue, tightness, and holding patterns that accumulate over years begin to dissolve — often permanently.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="benefit__title">Better sleep quality</h3>
-        <p class="benefit__text">With the nervous system less activated and the body more at ease, sleep deepens. Recovery happens at a different level.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     TRAINING IN DEPTH
-     ═══════════════════════════════════════════ -->
-<section class="training-sec" id="training">
-  <div class="container">
-    <div class="training-sec__header">
-      <div class="reveal">
-        <span class="hr-line"></span>
-        <p class="eyebrow" style="margin-bottom:16px">07 — Training in depth</p>
-        <h2 class="training-sec__heading">Train with the eye<br>of a <em>physiotherapist.</em></h2>
-      </div>
-      <div class="reveal rd-1">
-        <p class="training-sec__paragraph">Most personal training fixes what's broken, temporarily. <strong>We train the body to stop breaking.</strong> Each plan is built on an assessment that maps how you move, where you compensate, and what your body needs to perform without pain.</p>
-        <p class="training-sec__paragraph">With 14 years as a physiotherapist in Brazil — plus a Master's in Acupuncture and training in Osteopathy — Jeymison brings a clinical eye to every coaching session. You don't just get workouts. You get a program designed to correct dysfunction before it turns into injury.</p>
-      </div>
-    </div>
-
-    <div class="formats-grid reveal">
-      <div class="format-card">
-        <p class="format-card__tag">Format I</p>
-        <h3 class="format-card__title">In-person Training</h3>
-        <p class="format-card__desc">Real-time coaching with hands-on guidance. Ideal for those who want immediate technique feedback and in-person accountability.</p>
-        <ul class="format-card__features">
-          <li>Real-time corrections to perfect technique</li>
-          <li>Hands-on guidance and motivation</li>
-          <li>Sessions at your home, gym, or our space</li>
-        </ul>
-        <p class="format-card__for">For clients who thrive on in-person accountability</p>
-      </div>
-
-      <div class="format-card">
-        <p class="format-card__tag">Format II</p>
-        <h3 class="format-card__title">Online Training</h3>
-        <p class="format-card__desc">Maximum flexibility through our coaching app. Custom programs adapted to your schedule, with video demonstrations and direct chat with Jeymison.</p>
-        <ul class="format-card__features">
-          <li>Train from anywhere, on your own time</li>
-          <li>Fully personalized workout plans</li>
-          <li>Direct coach chat for feedback</li>
-        </ul>
-        <p class="format-card__for">For busy schedules and clients outside London, ON</p>
-      </div>
-
-      <div class="format-card">
-        <p class="format-card__tag">Format III</p>
-        <h3 class="format-card__title">Hybrid Training</h3>
-        <p class="format-card__desc">The best of both. Periodic in-person sessions for technique refinement, paired with online programming you follow between visits.</p>
-        <ul class="format-card__features">
-          <li>Online flexibility + in-person depth</li>
-          <li>Periodic technique refinement</li>
-          <li>Consistent progression between visits</li>
-        </ul>
-        <p class="format-card__for">For variable schedules that still value hands-on support</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Mid-page CTA (after Training deep-dive) -->
-<section class="mid-cta reveal">
-  <div class="container">
-    <div class="mid-cta__inner">
-      <div class="mid-cta__text">
-        <span class="mid-cta__eyebrow">Start here</span>
-        <p class="mid-cta__line">Your first step is a conversation — not a commitment.</p>
-      </div>
-      <a href="#contact" class="btn btn--primary">
-        Book Free Consultation
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
      FAQ
      ═══════════════════════════════════════════ -->
 <section class="faq" id="faq">
@@ -618,7 +634,7 @@
     <div class="faq__grid">
       <div class="faq__sidebar reveal">
         <span class="hr-line"></span>
-        <p class="eyebrow" style="margin-bottom:18px">08 — Before you book</p>
+        <p class="eyebrow" style="margin-bottom:18px">Before you book</p>
         <h2 class="faq__title">Common<br><em>questions.</em></h2>
         <p class="faq__intro">If you can't find what you're looking for here, send us a message — we're happy to answer directly.</p>
       </div>
@@ -626,10 +642,18 @@
       <div class="faq__list reveal rd-1">
         <details class="faq-item">
           <summary class="faq-item__question">
+            What's the difference between the Free Consultation and the M2C Assessment?
+            <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
+          </summary>
+          <p class="faq-item__answer">The Free Consultation is a 15-minute call (phone or video) where we listen to your situation, answer your questions, and help you decide if Move Two Cure is the right path. <strong>It's free and there's no commitment.</strong> The M2C Assessment is the next step — a 60-minute in-person session where we conduct the actual evaluation: movement testing, postural analysis, pain mapping, and the design of your personalized plan. It's paid because it's where the work begins.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
             Do you offer a free consultation?
             <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
           </summary>
-          <p class="faq-item__answer">Yes. Every new client starts with a <strong>free 15-minute consultation call</strong> — whether by phone or video. It's a short conversation to understand your situation, answer your questions, and direct you to the best path forward. No commitment required.</p>
+          <p class="faq-item__answer">Yes — every new client begins with a <strong>Free 15-minute Consultation Call</strong>. It's not the assessment itself; it's the conversation that comes before. We use it to understand your case, answer your questions, and mutually decide if our method is right for you. From there, you book your M2C Assessment to begin the actual work.</p>
         </details>
 
         <details class="faq-item">
@@ -645,7 +669,7 @@
             How many sessions will I need?
             <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
           </summary>
-          <p class="faq-item__answer">It depends on your goals. For Rolfing®, the classical <strong>Ten-Series</strong> is a complete structural reorganization. Many people also benefit from shorter non-standardized programs (3-5 sessions) focused on specific complaints. Training programs are typically structured in 8-12 week cycles. We'll discuss options during your free consultation.</p>
+          <p class="faq-item__answer">It depends on what your Assessment reveals. For Rolfing®, the classical <strong>Ten-Series</strong> is a complete structural process. For Training, programs typically run in 8-12 week cycles. Many clients integrate both — sequence and duration are mapped during the Assessment, never one-size-fits-all.</p>
         </details>
 
         <details class="faq-item">
@@ -653,7 +677,7 @@
             Do you offer direct billing or accept insurance?
             <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
           </summary>
-          <p class="faq-item__answer">Rolfing® sessions through Active Care Physiotherapy are covered by most extended health plans in Ontario — typically under registered physiotherapy or massage therapy benefits. We provide receipts for reimbursement. <strong>Ask during your free consultation</strong> and we'll clarify what applies to your specific plan.</p>
+          <p class="faq-item__answer">Rolfing® is <strong>typically not covered</strong> by extended health benefit plans. However, Jackeline also works as a registered physiotherapist at Active Care Physiotherapy, and physiotherapy services may be eligible for coverage depending on your plan. We can provide receipts for reimbursement and help you understand your options during your consultation.</p>
         </details>
 
         <details class="faq-item">
@@ -679,6 +703,13 @@
           </summary>
           <p class="faq-item__answer">Yes — <strong>online training with Jeymison</strong> is available anywhere. We also welcome visitors to London, ON for intensive Rolfing® sessions if you're willing to travel. Reach out and we'll find the format that works.</p>
         </details>
+
+        <div class="faq__cta">
+          <a href="#contact" class="btn btn--primary">
+            Book Your Free Consultation
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -691,7 +722,7 @@
   <div class="container">
     <div class="contact__header reveal">
       <span class="hr-line hr-line--center"></span>
-      <p class="eyebrow">09 — Get in touch</p>
+      <p class="eyebrow">Get in touch</p>
       <h2 class="contact__title">Every journey starts with<br>a <em>conversation.</em></h2>
       <p class="contact__sub">Tell us a bit about where you are and what you want to change. We'll get back within 24 hours to schedule a free 15-minute consultation — no commitment, just clarity about whether our approach is the right fit.</p>
     </div>
@@ -850,10 +881,9 @@
     <p class="final-cta__sub reveal rd-2">Now it's time to learn a new story — where movement is safe, strength is possible, and freedom is the destination.</p>
     <div class="final-cta__actions reveal rd-3">
       <a href="#contact" class="btn btn--gold">
-        Book Free Consultation
+        Book Your Free Consultation
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="#about" class="btn btn--light">Meet Jackeline & Jeymison</a>
     </div>
     <p class="final-cta__note reveal rd-4">15-minute call · No commitment · London, ON</p>
   </div>
@@ -870,6 +900,7 @@
           <img src="images/logo-gold-horizontal.png" alt="Move two cure">
         </div>
         <p class="footer__tagline">Movement is information.<br>Your body learns to move without fear again.</p>
+        <p class="footer__since">London, ON · since 2023</p>
         <div class="footer__socials">
           <a href="https://www.instagram.com/move2cure" target="_blank" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
@@ -887,10 +918,10 @@
         <p class="footer__col-title">Explore</p>
         <ul class="footer__links">
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#rolfing">Rolfing®</a></li>
-          <li><a href="#training">Training</a></li>
-          <li><a href="#contact">Book Consultation</a></li>
+          <li><a href="#method">The Method</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+          <li><a href="#paths">Paths</a></li>
+          <li><a href="#contact">Book Your Free Consultation</a></li>
         </ul>
       </div>
 
