@@ -40,7 +40,7 @@
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav__cta">Book Free Consultation</a>
+    <a href="#consultation-form" class="nav__cta">Book Free Consultation</a>
     <button class="nav__burger" onclick="document.querySelector('.mobile-menu').classList.add('is-open'); document.querySelector('.mobile-menu__backdrop').classList.add('is-open');" aria-label="Open menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="8" x2="20" y2="8" stroke-linecap="round"/><line x1="4" y1="16" x2="20" y2="16" stroke-linecap="round"/></svg>
     </button>
@@ -58,7 +58,7 @@
   <a href="#paths" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Paths</a>
   <a href="#faq" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">FAQ</a>
   <a href="#contact" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Contact</a>
-  <a href="#contact" class="mobile-menu__cta" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Book Free Consultation</a>
+  <a href="#consultation-form" class="mobile-menu__cta" onclick="document.querySelector('.mobile-menu').classList.remove('is-open');document.querySelector('.mobile-menu__backdrop').classList.remove('is-open');">Book Free Consultation</a>
 </div>
 
 <!-- ═══════════════════════════════════════════
@@ -72,41 +72,105 @@
         <h1 class="hero__headline reveal rd-1">Move without<br>fear. <em>Live without<br>limits.</em></h1>
         <p class="hero__sub reveal rd-2">We don't treat pain in pieces. We rebuild how your body moves — through a single integrated method, guided by movement science.</p>
         <div class="hero__actions reveal rd-3">
-          <a href="#contact" class="btn btn--primary">
-            Book Your Free Consultation
+          <a href="#consultation-form" class="btn btn--primary">
+            Book Free 30-min Consultation
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#how-it-works" class="hero__link">How it works →</a>
         </div>
+        <ul class="hero__checks reveal rd-3">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Physiotherapist-designed
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            100% Online consultation
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No obligation
+          </li>
+        </ul>
       </div>
-      <!-- Hero photo — desktop: right column. Mobile: between buttons and trust numbers. -->
-      <div class="hero__visual reveal rd-2">
-        <div class="hero__photo">
-          <img src="images/jeymison-training.jpg" alt="Jeymison coaching a client through movement correction">
-        </div>
-        <div class="hero__badge">
-          <div class="hero__badge-icon">
-            <img src="images/m-icon-green.png" alt="">
+
+      <!-- Inline conversion form — the primary CTA target -->
+      <div class="hero__form-col reveal rd-2">
+        <div class="hero-form" id="consultation-form">
+          <p class="hero-form__badge">Free · 30 min · Online</p>
+          <h2 class="hero-form__title">Book your free consultation</h2>
+          <p class="hero-form__sub">A 30-minute online video call with Jeymison. We'll reply within 24 hours with available times.</p>
+
+          <!-- Success message — shown after a successful submission -->
+          <div class="hero-form__success" data-form-success>
+            <div class="hero-form__success-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="hero-form__success-title">Request received</p>
+            <p class="hero-form__success-text">Thank you. We'll email you within 24 hours with available times for your free consultation.</p>
           </div>
-          <div class="hero__badge-text">
-            <b>Movement is Information</b>
-            <span>The M2C Method · Movement is information</span>
-          </div>
+
+          <!--
+          Formspree endpoint: submissions currently routed to focusmedmarketing@gmail.com.
+          TODO: switch the destination inside the Formspree dashboard once movetwocure@gmail.com is verified.
+          -->
+          <form action="https://formspree.io/f/mdayywaw" method="POST" onsubmit="handleFormSubmit(event)">
+            <!-- Honeypot: hidden from users, auto-rejected by Formspree if filled -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+            <input type="hidden" name="_subject" value="New Free Consultation Request — Move Two Cure">
+            <input type="hidden" name="request_type" value="Free 30-min Online Consultation">
+
+            <div class="hero-form__field">
+              <label for="hf-name">Full name</label>
+              <input type="text" id="hf-name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="hero-form__field">
+              <label for="hf-email">Email</label>
+              <input type="email" id="hf-email" name="email" placeholder="you@email.com" required>
+            </div>
+            <div class="hero-form__field">
+              <label for="hf-phone">Phone (optional)</label>
+              <input type="tel" id="hf-phone" name="phone" placeholder="+1 (___) ___-____">
+            </div>
+            <div class="hero-form__field">
+              <label for="hf-goal">What's your main goal?</label>
+              <select id="hf-goal" name="goal" required>
+                <option value="">Select one…</option>
+                <option value="Get stronger / build muscle">Get stronger / build muscle</option>
+                <option value="Move better / improve mobility">Move better / improve mobility</option>
+                <option value="Recover from pain or injury">Recover from pain or injury</option>
+                <option value="Improve athletic performance">Improve athletic performance</option>
+                <option value="Long-term health & longevity">Long-term health &amp; longevity</option>
+                <option value="Something else">Something else</option>
+              </select>
+            </div>
+            <div class="hero-form__field">
+              <label for="hf-message">Anything we should know? (optional)</label>
+              <textarea id="hf-message" name="message" rows="2" placeholder="A sentence or two is plenty"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary hero-form__submit">
+              Request my free consultation
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="hero-form__disclaimer">No spam. No automated calls. Your information stays with us.</p>
+          </form>
         </div>
       </div>
-      <div class="hero__trust reveal rd-4">
-        <div class="hero__trust-item">
-          <span class="hero__trust-num">20+</span>
-          <span class="hero__trust-label">years combined experience</span>
-        </div>
-        <div class="hero__trust-item">
-          <span class="hero__trust-num">500+</span>
-          <span class="hero__trust-label">clients guided to pain-free life</span>
-        </div>
-        <div class="hero__trust-item">
-          <span class="hero__trust-num">2</span>
-          <span class="hero__trust-label">certified specialists · one system</span>
-        </div>
+    </div>
+
+    <div class="hero__trust reveal rd-4">
+      <div class="hero__trust-item">
+        <span class="hero__trust-num">20+</span>
+        <span class="hero__trust-label">years combined experience</span>
+      </div>
+      <div class="hero__trust-item">
+        <span class="hero__trust-num">500+</span>
+        <span class="hero__trust-label">clients guided to pain-free life</span>
+      </div>
+      <div class="hero__trust-item">
+        <span class="hero__trust-num">2</span>
+        <span class="hero__trust-label">certified specialists · one system</span>
       </div>
     </div>
   </div>
@@ -218,9 +282,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </div>
-        <span class="timeline__tag">Free · 15 minutes · Phone or video</span>
+        <span class="timeline__tag">Free · 30 minutes · Online video call</span>
         <h3 class="timeline__title">Free Consultation</h3>
-        <p class="timeline__text">A short conversation to understand your situation. We listen, we ask the right questions, and we help you decide whether Move Two Cure is the path that fits — before you commit to anything. No pressure, no sales pitch.</p>
+        <p class="timeline__text">A 30-minute online video call with Jeymison to understand your situation. We listen, we ask the right questions, and we help you decide whether Move Two Cure is the path that fits — before you commit to anything. No pressure, no sales pitch.</p>
       </div>
 
       <div class="timeline__step">
@@ -230,9 +294,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="4" width="12" height="18" rx="2"/><path d="M9 4V2h6v2M9 11h6M9 15h4" stroke-linecap="round"/></svg>
           </div>
         </div>
-        <span class="timeline__tag">Paid · 60 minutes · In-person · London, ON</span>
-        <h3 class="timeline__title">M2C Assessment</h3>
-        <p class="timeline__text">Your first paid session — and the actual starting point of the work. A complete evaluation: how you move, how you compensate, where pain shows up, what your body needs. From this single session, we map your personalized path.</p>
+        <span class="timeline__tag">Paid · In-person or Online · London, ON</span>
+        <h3 class="timeline__title">Movement Assessment</h3>
+        <p class="timeline__text">The paid evaluation where your plan is built — in person in London, ON, or fully online. A complete read of how you move, how you compensate, and what your body needs. You leave with a written assessment and a personalized training plan.</p>
       </div>
 
       <div class="timeline__step">
@@ -262,10 +326,77 @@
 
     <div class="how-it-works__cta reveal rd-2">
       <p class="how-it-works__cta-line">Start with Step 1 — it's free.</p>
-      <a href="#contact" class="btn btn--primary">
-        Book Your Free Consultation
+      <a href="#consultation-form" class="btn btn--primary">
+        Book Free 30-min Consultation
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MOVEMENT ASSESSMENT — the paid product (protagonist)
+     ═══════════════════════════════════════════ -->
+<section class="assessment" id="assessment">
+  <div class="assessment__ghost" aria-hidden="true">
+    <img src="images/m-icon-gold.png" alt="">
+  </div>
+  <div class="container">
+    <div class="assessment__grid">
+      <div class="assessment__intro reveal">
+        <p class="eyebrow eyebrow--light" style="margin-bottom:20px">The Movement Assessment</p>
+        <h2 class="assessment__title">Where your plan<br><em>is actually built.</em></h2>
+        <p class="assessment__lead">The free consultation tells us if we're a fit. The <strong>Movement Assessment</strong> is where the real work starts — a complete evaluation of how you move, what your body needs, and the most direct path to get you there.</p>
+
+        <div class="assessment__format">
+          <div class="assessment__format-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <p class="assessment__format-text"><strong>In-person in London, ON — or fully online.</strong> You choose the format that fits your life. Same depth, same plan, either way.</p>
+        </div>
+
+        <p class="assessment__investment">Investment varies based on the path we design together — Rolfing®, Training, or both. You'll know exactly what you're choosing before you commit to anything.</p>
+
+        <a href="#consultation-form" class="btn btn--gold">
+          Book Free 30-min Consultation
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="assessment__cta-note">It always starts with the free call — no assessment is booked before we've spoken.</p>
+      </div>
+
+      <div class="assessment__deliverables reveal rd-1">
+        <p class="assessment__deliverables-label">What you walk away with</p>
+        <ul class="assessment__list">
+          <li class="assessment__item">
+            <div class="assessment__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h4" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h3>Complete Assessment <span>· PDF</span></h3>
+              <p>A full written breakdown of how you move, where you compensate, and what your body is ready for.</p>
+            </div>
+          </li>
+          <li class="assessment__item">
+            <div class="assessment__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3 8-8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h3>Personalized Training Plan <span>· PDF</span></h3>
+              <p>A plan built around your biology — not a template. Designed by a physiotherapist's eye for how bodies actually adapt.</p>
+            </div>
+          </li>
+          <li class="assessment__item">
+            <div class="assessment__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h3>Training App Access</h3>
+              <p>Your plan, your progressions, and your exercise demos — in your pocket, wherever and however you train.</p>
+            </div>
+          </li>
+        </ul>
+        <p class="assessment__next">After the assessment, you choose your path: <strong>Rolfing®, Training, or both</strong> — sequenced intentionally around what your body revealed.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -284,16 +415,17 @@
 
     <div class="paths__grid">
       <article class="path-card reveal rd-1" id="path-rolfing">
+        <div class="path-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21c-3-4-3-10 0-14 3-4 8-4 11 0" stroke-linecap="round"/><circle cx="8" cy="21" r="1.6" fill="currentColor"/></svg>
+        </div>
         <p class="path-card__tag">Path I</p>
         <h3 class="path-card__title">Rolfing® Structural Integration</h3>
-        <p class="path-card__subtitle">When the body is locked in patterns of protection</p>
-        <p class="path-card__lead">If chronic pain, postural tension, or limited mobility is keeping you small, Rolfing® reorganizes the fascial network that holds those patterns in place. Manual therapy combined with movement reeducation — changing how you inhabit your body, not just how it feels.</p>
+        <p class="path-card__subtitle">Structural reorganization for a body locked in patterns of protection.</p>
         <ul class="path-card__features">
           <li>The Rolfing® Ten-Series or focused sessions</li>
           <li>Manual therapy + movement reeducation</li>
           <li>Led by Certified Rolfer® Jackeline Morais</li>
         </ul>
-        <p class="path-card__for">For chronic pain, postural reorganization, pre/postnatal, recovery from injury.</p>
         <a href="#rolfing-detail" class="path-card__link">
           Learn more about Rolfing®
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -301,16 +433,17 @@
       </article>
 
       <article class="path-card reveal rd-2" id="path-training">
+        <div class="path-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 19l6-10 4 6 3-4 5 8z" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        </div>
         <p class="path-card__tag">Path II</p>
         <h3 class="path-card__title">Strength & Movement Training</h3>
-        <p class="path-card__subtitle">When the body is ready to build capacity</p>
-        <p class="path-card__lead">If your body is ready to rebuild strength, recover from injury, or push performance further, Training is your path. Programs designed by a physiotherapist's eye — meaning every progression is built around how you actually move, not on a generic template.</p>
+        <p class="path-card__subtitle">Building capacity and performance, designed by a physiotherapist's eye.</p>
         <ul class="path-card__features">
           <li>In-person, online, or hybrid formats</li>
           <li>Built on physiotherapy principles</li>
           <li>Led by Jeymison Morais, Physio + Personal Trainer</li>
         </ul>
-        <p class="path-card__for">For rehab, performance, longevity, online coaching, return-to-sport.</p>
         <a href="#training-detail" class="path-card__link">
           Learn more about Training
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -339,66 +472,16 @@
       </div>
     </div>
 
-    <div class="rolfing-sec__media">
-      <div class="rolfing-sec__img reveal">
+    <div class="detail-sec__media reveal rd-1">
+      <div class="detail-sec__img">
         <img src="images/jackeline-rolfing-method.jpg" alt="Jackeline performing manual fascial work">
       </div>
-      <div class="rolfing-sec__components reveal rd-1">
-        <div class="component-item">
-          <p class="component-item__tag">Manual Therapy</p>
-          <h3 class="component-item__title">Deep fascial work</h3>
-          <p class="component-item__text">Precise, deep manipulation that releases tension and restrictions in the myofascial network. Produces immediate increases in range of motion and noticeable pain relief from the very first session.</p>
-        </div>
-        <div class="component-item">
-          <p class="component-item__tag">Movement Reeducation</p>
-          <h3 class="component-item__title">New patterns, new possibilities</h3>
-          <p class="component-item__text">The dynamic side of the work. Focused on posture, body awareness, and optimizing functional movement. Prevents relapses and ensures long-term results that extend far beyond the session.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefits-grid reveal">
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20" stroke-linecap="round"/><circle cx="12" cy="12" r="5"/></svg>
-        </div>
-        <h3 class="benefit__title">Chronic pain relief</h3>
-        <p class="benefit__text">Addresses the root causes of persistent pain by resolving the fascial tensions and postural patterns that create it.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
-        </div>
-        <h3 class="benefit__title">Greater range of motion</h3>
-        <p class="benefit__text">Restrictions release. Joints move more freely. Your body rediscovers movements it had forgotten were possible.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M7 7l10 10M7 17L17 7" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="benefit__title">Improved posture</h3>
-        <p class="benefit__text">Fascial reorganization leads to natural postural alignment — not forced correction. You stand, walk, and breathe differently.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21c-3-4-3-10 0-14 3-4 8-4 11 0" stroke-linecap="round"/><circle cx="8" cy="21" r="1.5" fill="currentColor"/></svg>
-        </div>
-        <h3 class="benefit__title">Body awareness</h3>
-        <p class="benefit__text">You start to feel the subtle patterns you didn't notice before — and gain the tools to change them consciously.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c3-5 9-5 12 0-3 5-9 5-12 0z"/><path d="M12 3c5 3 5 9 0 12" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="benefit__title">Tension release</h3>
-        <p class="benefit__text">Muscle fatigue, tightness, and holding patterns that accumulate over years begin to dissolve — often permanently.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="benefit__title">Better sleep quality</h3>
-        <p class="benefit__text">With the nervous system less activated and the body more at ease, sleep deepens. Recovery happens at a different level.</p>
+      <div class="detail-sec__aside">
+        <p class="detail-sec__aside-text">It's most often the right path for chronic tension, postural reorganization, pre and post-natal care, and recovery from injury. Whether Rolfing® belongs in your plan is decided together, during your Movement Assessment — never guessed.</p>
+        <a href="#consultation-form" class="detail-sec__link">
+          Start with a free consultation
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -421,42 +504,15 @@
       </div>
     </div>
 
-    <div class="formats-grid reveal">
-      <div class="format-card">
-        <p class="format-card__tag">Format I</p>
-        <h3 class="format-card__title">In-person Training</h3>
-        <p class="format-card__desc">Real-time coaching with hands-on guidance. Ideal for those who want immediate technique feedback and in-person accountability.</p>
-        <ul class="format-card__features">
-          <li>Real-time corrections to perfect technique</li>
-          <li>Hands-on guidance and motivation</li>
-          <li>Sessions at your home, gym, or our space</li>
-        </ul>
-        <p class="format-card__for">For clients who thrive on in-person accountability</p>
-      </div>
-
-      <div class="format-card">
-        <p class="format-card__tag">Format II</p>
-        <h3 class="format-card__title">Online Training</h3>
-        <p class="format-card__desc">Maximum flexibility through our coaching app. Custom programs adapted to your schedule, with video demonstrations and direct chat with Jeymison.</p>
-        <ul class="format-card__features">
-          <li>Train from anywhere, on your own time</li>
-          <li>Fully personalized workout plans</li>
-          <li>Direct coach chat for feedback</li>
-        </ul>
-        <p class="format-card__for">For busy schedules and clients outside London, ON</p>
-      </div>
-
-      <div class="format-card">
-        <p class="format-card__tag">Format III</p>
-        <h3 class="format-card__title">Hybrid Training</h3>
-        <p class="format-card__desc">The best of both. Periodic in-person sessions for technique refinement, paired with online programming you follow between visits.</p>
-        <ul class="format-card__features">
-          <li>Online flexibility + in-person depth</li>
-          <li>Periodic technique refinement</li>
-          <li>Consistent progression between visits</li>
-        </ul>
-        <p class="format-card__for">For variable schedules that still value hands-on support</p>
-      </div>
+    <div class="detail-sec__formats reveal rd-1">
+      <span class="detail-sec__format-chip">In-person</span>
+      <span class="detail-sec__format-chip">Online</span>
+      <span class="detail-sec__format-chip">Hybrid</span>
+      <p class="detail-sec__formats-text">Train in person, online, or a mix of both — your format is set during the Movement Assessment, around your schedule and how you progress best.</p>
+      <a href="#consultation-form" class="detail-sec__link">
+        Start with a free consultation
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -650,10 +706,10 @@
       <div class="faq__list reveal rd-1">
         <details class="faq-item">
           <summary class="faq-item__question">
-            What's the difference between the Free Consultation and the M2C Assessment?
+            What's the difference between the Free Consultation and the Movement Assessment?
             <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
           </summary>
-          <p class="faq-item__answer">The Free Consultation is a 15-minute call (phone or video) where we listen to your situation, answer your questions, and help you decide if Move Two Cure is the right path. <strong>It's free and there's no commitment.</strong> The M2C Assessment is the next step — a 60-minute in-person session where we conduct the actual evaluation: movement testing, postural analysis, pain mapping, and the design of your personalized plan. It's paid because it's where the work begins.</p>
+          <p class="faq-item__answer">The Free Consultation is a 30-minute online video call where we listen to your situation, answer your questions, and help you decide if Move Two Cure is the right path. <strong>It's free and there's no commitment.</strong> The Movement Assessment is the next step — a complete evaluation you can do in person in London, ON or fully online. It maps how you move and becomes your personalized training plan. It's paid because it's where the work begins.</p>
         </details>
 
         <details class="faq-item">
@@ -661,7 +717,7 @@
             Do you offer a free consultation?
             <span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span>
           </summary>
-          <p class="faq-item__answer">Yes — every new client begins with a <strong>Free 15-minute Consultation Call</strong>. It's not the assessment itself; it's the conversation that comes before. We use it to understand your case, answer your questions, and mutually decide if our method is right for you. From there, you book your M2C Assessment to begin the actual work.</p>
+          <p class="faq-item__answer">Yes — every new client begins with a <strong>Free 30-min Online Consultation</strong>. It's not the assessment itself; it's the conversation that comes before. We use it to understand your case, answer your questions, and mutually decide if our method is right for you. From there, you book your Movement Assessment to begin the actual work.</p>
         </details>
 
         <details class="faq-item">
@@ -713,8 +769,8 @@
         </details>
 
         <div class="faq__cta">
-          <a href="#contact" class="btn btn--primary">
-            Book Your Free Consultation
+          <a href="#consultation-form" class="btn btn--primary">
+            Book Free 30-min Consultation
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -732,7 +788,7 @@
       <span class="hr-line hr-line--center"></span>
       <p class="eyebrow">Get in touch</p>
       <h2 class="contact__title">Every journey starts with<br>a <em>conversation.</em></h2>
-      <p class="contact__sub">Tell us a bit about where you are and what you want to change. We'll get back within 24 hours to schedule a free 15-minute consultation — no commitment, just clarity about whether our approach is the right fit.</p>
+      <p class="contact__sub">Tell us a bit about where you are and what you want to change. We'll get back within 24 hours to schedule your Free 30-min Online Consultation — no commitment, just clarity about whether our approach is the right fit.</p>
     </div>
 
     <div class="contact__grid">
@@ -742,7 +798,7 @@
         <p class="contact__form-sub">We reply within 24 hours on business days.</p>
 
         <!-- Form success message (shows after successful submission) -->
-        <div class="contact__success" id="formSuccess">
+        <div class="contact__success" id="formSuccess" data-form-success>
           <div class="contact__success-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
@@ -888,12 +944,12 @@
     <h2 class="final-cta__title reveal rd-1">Your body didn't<br>fail you.<br><em>It protected you.</em></h2>
     <p class="final-cta__sub reveal rd-2">Now it's time to learn a new story — where movement is safe, strength is possible, and freedom is the destination.</p>
     <div class="final-cta__actions reveal rd-3">
-      <a href="#contact" class="btn btn--gold">
-        Book Your Free Consultation
+      <a href="#consultation-form" class="btn btn--gold">
+        Book Your Free 30-min Consultation
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
-    <p class="final-cta__note reveal rd-4">15-minute call · No commitment · London, ON</p>
+    <p class="final-cta__note reveal rd-4">A real 30-minute conversation with Jeymison — online, no obligation. We reply within 24 hours.</p>
   </div>
 </section>
 
@@ -929,7 +985,7 @@
           <li><a href="#method">The Method</a></li>
           <li><a href="#how-it-works">How it Works</a></li>
           <li><a href="#paths">Paths</a></li>
-          <li><a href="#contact">Book Your Free Consultation</a></li>
+          <li><a href="#consultation-form">Book Your Free Consultation</a></li>
         </ul>
       </div>
 
@@ -985,11 +1041,12 @@
     document.getElementById('segmentInput').value = btn.dataset.value;
   }
 
-  // Form submission handler
+  // Form submission handler — works for both the hero form and the contact form
   async function handleFormSubmit(e) {
     e.preventDefault();
     const form = e.target;
-    const successDiv = document.getElementById('formSuccess');
+    // Each form sits next to its own success message marked with [data-form-success]
+    const successDiv = form.parentElement.querySelector('[data-form-success]');
 
     try {
       const response = await fetch(form.action, {
@@ -1000,8 +1057,10 @@
 
       if (response.ok) {
         form.style.display = 'none';
-        successDiv.classList.add('is-visible');
-        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (successDiv) {
+          successDiv.classList.add('is-visible');
+          successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       } else {
         alert('Something went wrong. Please try again or email us directly at movetwocure@gmail.com');
       }

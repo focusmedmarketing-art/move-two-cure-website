@@ -181,16 +181,10 @@ a { color: inherit; text-decoration: none; }
 }
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  grid-template-areas:
-    "text  visual"
-    "trust visual";
-  gap: 48px 80px;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 64px;
   align-items: start;
 }
-.hero__text   { grid-area: text; }
-.hero__visual { grid-area: visual; align-self: center; }
-.hero__trust  { grid-area: trust; }
 .hero__eyebrow { margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
 .hero__eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold-vivid); }
 .hero__headline {
@@ -207,9 +201,10 @@ a { color: inherit; text-decoration: none; }
   max-width: 480px; line-height: 1.65;
   margin-bottom: 36px;
 }
-.hero__actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 44px; }
+.hero__actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 .hero__trust {
   display: flex; gap: 32px; flex-wrap: wrap;
+  margin-top: 56px;
   padding-top: 28px;
   border-top: 1px solid var(--border-soft);
 }
@@ -1524,6 +1519,257 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ═════════════════════════════════════════
+   HERO — trust strip (checkmark assurances)
+═══════════════════════════════════════════ */
+.hero__checks {
+  list-style: none;
+  display: flex; flex-wrap: wrap; gap: 12px 24px;
+  margin-top: 28px;
+}
+.hero__checks li {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; letter-spacing: 0.3px;
+  color: var(--text-body);
+}
+.hero__checks svg {
+  width: 18px; height: 18px; flex-shrink: 0;
+  color: var(--gold-vivid);
+  border: 1px solid var(--gold-vivid);
+  border-radius: 50%;
+  padding: 2.5px;
+}
+
+/* ═════════════════════════════════════════
+   HERO — inline conversion form
+═══════════════════════════════════════════ */
+.hero__form-col { width: 100%; }
+.hero-form {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 34px 32px 28px;
+  box-shadow: 0 30px 70px rgba(26,51,48,0.10), 0 6px 16px rgba(26,51,48,0.04);
+  scroll-margin-top: 90px;
+}
+.hero-form__badge {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold-vivid); font-weight: 500; margin-bottom: 12px;
+}
+.hero-form__title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px; color: var(--text-dark);
+  letter-spacing: -0.5px; font-weight: 400; line-height: 1.1;
+  margin-bottom: 8px;
+}
+.hero-form__sub {
+  font-size: 13px; color: var(--text-muted); line-height: 1.6;
+  margin-bottom: 22px;
+}
+.hero-form__field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 13px; }
+.hero-form__field label {
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 500;
+}
+.hero-form__field input,
+.hero-form__field select,
+.hero-form__field textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 300;
+  color: var(--text-dark);
+  background: var(--cream-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  padding: 11px 13px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-form__field input:focus,
+.hero-form__field select:focus,
+.hero-form__field textarea:focus {
+  outline: none; border-color: var(--gold-vivid); background: var(--white);
+}
+.hero-form__field textarea { resize: vertical; min-height: 56px; line-height: 1.55; }
+.hero-form__submit { width: 100%; justify-content: center; margin-top: 6px; }
+.hero-form__disclaimer {
+  font-size: 10px; color: var(--text-muted); opacity: 0.85;
+  text-align: center; margin-top: 12px; line-height: 1.5;
+}
+.hero-form__success {
+  display: none;
+  padding: 36px 28px; text-align: center;
+  background: var(--green); color: var(--cream);
+  border-radius: 4px;
+}
+.hero-form__success.is-visible { display: block; }
+.hero-form__success-icon {
+  width: 52px; height: 52px; margin: 0 auto 16px;
+  border: 2px solid var(--gold-vivid); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold-vivid);
+}
+.hero-form__success-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px; margin-bottom: 8px;
+}
+.hero-form__success-text { font-size: 13px; opacity: 0.85; line-height: 1.6; }
+
+/* ═════════════════════════════════════════
+   MOVEMENT ASSESSMENT — paid product section
+═══════════════════════════════════════════ */
+.assessment {
+  background: var(--green);
+  color: var(--cream);
+  padding: 130px 0;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
+.assessment__ghost {
+  position: absolute;
+  right: -8%; top: 50%; transform: translateY(-50%);
+  width: 520px; aspect-ratio: 1;
+  opacity: 0.05; pointer-events: none;
+}
+.assessment__ghost img { width: 100%; height: 100%; object-fit: contain; }
+.assessment__grid {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1.05fr 0.95fr;
+  gap: 64px; align-items: start;
+}
+.assessment__title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(34px, 4.4vw, 56px);
+  line-height: 1.05; letter-spacing: -1px;
+  color: var(--cream); font-weight: 400;
+  margin-bottom: 22px;
+}
+.assessment__title em { color: var(--gold-vivid); font-style: italic; }
+.assessment__lead {
+  font-size: 16px; line-height: 1.75;
+  color: var(--cream); opacity: 0.8;
+  margin-bottom: 28px;
+}
+.assessment__lead strong { color: var(--gold-light); font-weight: 500; opacity: 1; }
+.assessment__format {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 22px;
+  background: rgba(197,164,107,0.08);
+  border-left: 2px solid var(--gold-vivid);
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 24px;
+}
+.assessment__format-icon {
+  flex-shrink: 0; width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(197,164,107,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold-vivid);
+}
+.assessment__format-icon svg { width: 20px; height: 20px; }
+.assessment__format-text { font-size: 13px; line-height: 1.65; color: var(--cream); opacity: 0.85; }
+.assessment__format-text strong { color: var(--gold-light); font-weight: 500; }
+.assessment__investment {
+  font-size: 14px; line-height: 1.7;
+  color: var(--cream); opacity: 0.7;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+.assessment__cta-note {
+  font-size: 12px; color: var(--gold); opacity: 0.7;
+  margin-top: 16px; line-height: 1.6;
+}
+.assessment__deliverables {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(197,164,107,0.18);
+  border-radius: 6px;
+  padding: 36px 34px;
+}
+.assessment__deliverables-label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold-vivid); font-weight: 500;
+  margin-bottom: 18px;
+}
+.assessment__list { list-style: none; display: flex; flex-direction: column; }
+.assessment__item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(197,164,107,0.14);
+}
+.assessment__item:first-child { padding-top: 0; }
+.assessment__item-icon {
+  flex-shrink: 0; width: 42px; height: 42px;
+  border-radius: 50%;
+  background: rgba(197,164,107,0.12);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold-vivid);
+}
+.assessment__item-icon svg { width: 21px; height: 21px; }
+.assessment__item h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 19px; color: var(--cream); font-weight: 400;
+  margin-bottom: 4px; letter-spacing: -0.2px;
+}
+.assessment__item h3 span { color: var(--gold-vivid); font-size: 13px; font-style: italic; }
+.assessment__item p { font-size: 13px; color: var(--cream); opacity: 0.65; line-height: 1.65; }
+.assessment__next {
+  margin-top: 20px; padding-top: 20px;
+  border-top: 1px solid rgba(197,164,107,0.14);
+  font-size: 13px; color: var(--cream); opacity: 0.7; line-height: 1.65;
+}
+.assessment__next strong { color: var(--gold-light); font-weight: 500; opacity: 1; }
+
+/* ═════════════════════════════════════════
+   PATH CARD — icon
+═══════════════════════════════════════════ */
+.path-card__icon {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: rgba(217,169,77,0.12);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green);
+  margin-bottom: 18px;
+}
+.path-card__icon svg { width: 22px; height: 22px; }
+
+/* ═════════════════════════════════════════
+   DETAIL SECTIONS — collapsed Rolfing / Training
+═══════════════════════════════════════════ */
+.detail-sec__media {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: center;
+}
+.detail-sec__img {
+  aspect-ratio: 4/3; border-radius: 4px; overflow: hidden;
+  box-shadow: 0 30px 60px rgba(26,51,48,0.12);
+}
+.detail-sec__img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.detail-sec__aside-text {
+  font-size: 15px; line-height: 1.8; color: var(--text-body);
+  margin-bottom: 20px;
+}
+.detail-sec__formats {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+}
+.detail-sec__format-chip {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--green); font-weight: 500;
+  border: 1px solid var(--border-soft);
+  border-radius: 100px;
+  padding: 9px 18px;
+}
+.detail-sec__formats-text {
+  flex-basis: 100%;
+  font-size: 15px; line-height: 1.8; color: var(--text-body);
+  margin: 12px 0 4px;
+}
+.detail-sec__link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold-vivid); font-weight: 500;
+  transition: gap 0.2s;
+}
+.detail-sec__link:hover { gap: 12px; }
+
+/* ═════════════════════════════════════════
    MOBILE RESPONSIVENESS
 ═══════════════════════════════════════════ */
 @media (max-width: 960px) {
@@ -1533,17 +1779,22 @@ a { color: inherit; text-decoration: none; }
   .nav__links, .nav__cta { display: none; }
   .nav__burger { display: flex; }
 
-  /* HERO — mobile: text → photo → trust numbers stacked */
+  /* HERO — mobile: text stacked above the inline form */
   .hero { padding: 40px 0 80px; }
   .hero__grid {
     grid-template-columns: 1fr;
-    grid-template-areas: "text" "visual" "trust";
     gap: 40px;
   }
-  .hero__visual { max-width: 440px; margin: 0 auto; }
-  .hero__actions { margin-bottom: 0; }
   .hero__headline { font-size: clamp(38px, 9vw, 56px); }
-  .hero__trust { gap: 24px; }
+  .hero__trust { gap: 24px; margin-top: 44px; }
+
+  /* MOVEMENT ASSESSMENT — mobile */
+  .assessment { padding: 80px 0; }
+  .assessment__grid { grid-template-columns: 1fr; gap: 40px; }
+  .assessment__deliverables { padding: 30px 26px; }
+
+  /* DETAIL SECTIONS — mobile */
+  .detail-sec__media { grid-template-columns: 1fr; gap: 32px; }
 
   .philosophy { padding: 80px 0; }
   .philosophy__grid { grid-template-columns: 1fr; gap: 60px; }
