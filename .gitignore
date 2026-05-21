@@ -3,3 +3,13 @@
 .vscode/
 .idea/
 node_modules/
+
+# Esta pasta local contém mídia de trabalho (vídeos, zips, imagens brutas)
+# que NÃO faz parte do site. Ignora tudo, exceto os arquivos publicados.
+/*
+!/.gitignore
+!/index.html
+!/CNAME
+!/styles.css
+!/README.md
+!/images/
