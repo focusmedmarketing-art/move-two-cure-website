@@ -529,6 +529,196 @@ section{position:relative}
   .service-card__name{font-size:22px}
   .service-card__price strong{font-size:30px}
 }
+
+/* ============================================================
+   TECH-FORWARD ANIMATIONS — buttons, paths, cards, orbs
+   ============================================================ */
+
+/* Animated background paths (drawing + flowing) */
+@keyframes bp-draw{
+  0%{stroke-dashoffset:1400;opacity:0}
+  20%{opacity:.9}
+  60%{opacity:.6}
+  100%{stroke-dashoffset:-1400;opacity:0}
+}
+.bg-paths{position:absolute;inset:0;width:100%;height:100%}
+.bp-line{
+  stroke-dasharray:600 1400;
+  stroke-dashoffset:1400;
+  animation:bp-draw 12s linear infinite;
+  will-change:stroke-dashoffset,opacity;
+}
+@keyframes bp-ring-spin{
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+.bp-ring,.bp-ring2{transform-origin:1240px 170px;animation:bp-ring-spin 60s linear infinite}
+.bp-ring2{animation-duration:40s;animation-direction:reverse}
+
+/* Hero floating orbs (subtle glowing accents) */
+@keyframes orb-float{
+  0%,100%{transform:translate(0,0) scale(1);opacity:.4}
+  50%{transform:translate(20px,-30px) scale(1.08);opacity:.7}
+}
+.hero-orb{
+  position:absolute;border-radius:50%;
+  filter:blur(60px);pointer-events:none;
+  animation:orb-float 11s ease-in-out infinite;
+}
+.hero-orb--1{
+  width:380px;height:380px;
+  background:radial-gradient(circle,rgba(197,164,107,.35) 0%,rgba(197,164,107,0) 70%);
+  top:8%;right:6%;
+}
+.hero-orb--2{
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(45,114,100,.30) 0%,rgba(45,114,100,0) 70%);
+  bottom:10%;left:4%;
+  animation-delay:-5.5s;
+}
+
+/* === ENHANCED GOLD BUTTONS (gradient + shimmer + glow) === */
+.btn-gold,
+.form-submit,
+.final__btn,
+.service-card__cta:not(.service-card__cta--outline),
+.nav__cta{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#B8975E 0%,#C5A46B 25%,#E8C98E 50%,#C5A46B 75%,#B8975E 100%) !important;
+  background-size:220% 220% !important;
+  background-position:0% 50%;
+  color:var(--green) !important;
+  box-shadow:0 10px 28px rgba(197,164,107,.30),0 0 0 0 rgba(197,164,107,.40),inset 0 1px 0 rgba(255,255,255,.30);
+  transition:background-position .9s cubic-bezier(.16,1,.3,1),
+             transform .35s cubic-bezier(.16,1,.3,1),
+             box-shadow .4s ease;
+  isolation:isolate;
+}
+.btn-gold:hover,
+.form-submit:hover,
+.final__btn:hover,
+.service-card__cta:not(.service-card__cta--outline):hover,
+.nav__cta:hover{
+  background-position:100% 50%;
+  transform:translateY(-3px);
+  box-shadow:0 18px 44px rgba(197,164,107,.50),0 0 0 6px rgba(197,164,107,.12),inset 0 1px 0 rgba(255,255,255,.45);
+}
+/* Shimmer sweep on hover */
+.btn-gold::before,
+.form-submit::before,
+.final__btn::before,
+.service-card__cta:not(.service-card__cta--outline)::before,
+.nav__cta::before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);
+  transform:translateX(-110%);
+  transition:transform .8s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;
+  z-index:1;
+}
+.btn-gold:hover::before,
+.form-submit:hover::before,
+.final__btn:hover::before,
+.service-card__cta:not(.service-card__cta--outline):hover::before,
+.nav__cta:hover::before{
+  transform:translateX(110%);
+}
+.btn-gold > *,
+.form-submit > *,
+.final__btn > *,
+.service-card__cta > *{position:relative;z-index:2}
+
+/* Outline button (Assessment) — gets gold gradient on hover */
+.service-card__cta--outline{
+  position:relative;overflow:hidden;
+  transition:background .5s,color .35s,transform .25s,box-shadow .25s,border-color .35s;
+}
+.service-card__cta--outline:hover{
+  background:linear-gradient(135deg,#C5A46B 0%,#E8C98E 100%);
+  border-color:transparent;
+  transform:translateY(-3px);
+  box-shadow:0 16px 36px rgba(197,164,107,.40);
+}
+
+/* === Service card flagship glow pulse === */
+@keyframes flagship-glow{
+  0%,100%{box-shadow:0 24px 64px rgba(197,164,107,.10),0 0 0 0 rgba(197,164,107,0)}
+  50%{box-shadow:0 32px 80px rgba(197,164,107,.22),0 0 0 4px rgba(197,164,107,.08)}
+}
+.service-card--flagship{animation:flagship-glow 4.5s ease-in-out infinite}
+.service-card--flagship:hover{animation:none}
+
+/* === Sweep-line on card hover (Why / Who / Process / Service) === */
+.why-card,.who-card,.process-card,.service-card{position:relative;overflow:hidden}
+.why-card::after,.who-card::after,.process-card::after,.service-card::after{
+  content:"";
+  position:absolute;top:0;left:-100%;width:100%;height:1.5px;
+  background:linear-gradient(90deg,transparent 0%,rgba(197,164,107,.0) 20%,rgba(197,164,107,.9) 50%,rgba(197,164,107,0) 80%,transparent 100%);
+  transition:left .9s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;
+}
+.why-card:hover::after,.who-card:hover::after,.process-card:hover::after,.service-card:hover::after{left:100%}
+
+/* === Most Popular badge glow pulse === */
+@keyframes badge-glow{
+  0%,100%{box-shadow:0 10px 28px rgba(197,164,107,.45),0 0 0 0 rgba(197,164,107,.0)}
+  50%{box-shadow:0 14px 36px rgba(197,164,107,.65),0 0 0 8px rgba(197,164,107,.15)}
+}
+.service-card__badge{animation:badge-glow 3s ease-in-out infinite}
+
+/* === Floating subtle for hero photo badge (already exists, refine) === */
+.hero__photo-badge{
+  box-shadow:0 14px 40px rgba(0,0,0,.25),0 0 0 1px rgba(197,164,107,.18);
+}
+
+/* === Hero CTA button extra punch === */
+.hero__cta-row .btn-gold{padding:20px 36px}
+
+/* === Animated thin divider between sections (subtle) === */
+.s-divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(197,164,107,.35),transparent);
+  margin:0;border:none;
+  position:relative;
+}
+
+/* === Hover lift on team cards === */
+.team__card{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s}
+.team__card:hover{transform:translateY(-6px);box-shadow:0 30px 70px rgba(0,0,0,.10)}
+
+/* === Authority cards: subtle gradient backdrop on hover === */
+.auth__card{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s,background .5s,box-shadow .35s;position:relative;overflow:hidden}
+.auth__card:hover{
+  transform:translateY(-4px);
+  background:linear-gradient(180deg,rgba(197,164,107,.06),rgba(197,164,107,.02));
+}
+
+/* === Form-submit specific tuning === */
+.form-submit{font-weight:700;letter-spacing:2.5px}
+
+/* === FAQ accordion: smoother open === */
+.faq__item{transition:background .3s}
+.faq__item.open{background:rgba(197,164,107,.04)}
+
+/* === Number count-up: gold accent glow === */
+.count{text-shadow:0 0 30px rgba(197,164,107,.25)}
+
+/* === Mobile: reduce some animations for perf === */
+@media (max-width:920px){
+  .hero-orb{filter:blur(40px)}
+  .hero-orb--1{width:240px;height:240px}
+  .hero-orb--2{width:200px;height:200px}
+  .bp-line{animation-duration:14s}
+}
+
+/* === Respect reduced motion === */
+@media (prefers-reduced-motion:reduce){
+  .bp-line,.hero-orb,.bp-ring,.bp-ring2,.service-card--flagship,.service-card__badge{animation:none !important}
+  .btn-gold::before,.form-submit::before,.final__btn::before,.service-card__cta::before,.nav__cta::before{display:none}
+}
+
 </style>
 
 
@@ -546,11 +736,39 @@ section{position:relative}
 
 <section class="hero" id="top">
   <div class="hero__bg">
-    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <circle class="ring" cx="1240" cy="170" r="360" fill="none" stroke="#C5A46B" stroke-width=".5" opacity=".11"/>
-      <circle class="ring2" cx="1240" cy="170" r="250" fill="none" stroke="#C5A46B" stroke-width=".5" opacity=".07"/>
-      <path d="M 0 740 Q 720 500 1440 740" fill="none" stroke="#C5A46B" stroke-width=".5" opacity=".05"/>
+    <svg class="bg-paths" width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="pg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#C5A46B" stop-opacity="0.50"/>
+          <stop offset="50%" stop-color="#C5A46B" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#C5A46B" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <path d="M -200,140 C 200,44.0 480,146.0 760,62.0 S 1240,128.0 1640,56.0" fill="none" stroke="url(#pg-grad)" stroke-width="0.60" class="bp-line" style="animation-delay:0.00s"/>
+      <path d="M -200,196 C 200,71.2 480,203.8 760,94.6 S 1240,180.4 1640,86.8" fill="none" stroke="url(#pg-grad)" stroke-width="0.85" class="bp-line" style="animation-delay:0.35s"/>
+      <path d="M -200,252 C 200,98.4 480,261.6 760,127.2 S 1240,232.8 1640,117.6" fill="none" stroke="url(#pg-grad)" stroke-width="1.10" class="bp-line" style="animation-delay:0.70s"/>
+      <path d="M -200,308 C 200,125.60000000000001 480,319.4 760,159.8 S 1240,285.2 1640,148.4" fill="none" stroke="url(#pg-grad)" stroke-width="0.60" class="bp-line" style="animation-delay:1.05s"/>
+      <path d="M -200,292 C 200,196.0 480,298.0 760,214.0 S 1240,280.0 1640,208.0" fill="none" stroke="url(#pg-grad)" stroke-width="0.85" class="bp-line" style="animation-delay:1.40s"/>
+      <path d="M -200,348 C 200,223.2 480,355.8 760,246.6 S 1240,332.4 1640,238.8" fill="none" stroke="url(#pg-grad)" stroke-width="1.10" class="bp-line" style="animation-delay:1.75s"/>
+      <path d="M -200,404 C 200,250.4 480,413.6 760,279.2 S 1240,384.8 1640,269.6" fill="none" stroke="url(#pg-grad)" stroke-width="0.60" class="bp-line" style="animation-delay:2.10s"/>
+      <path d="M -200,460 C 200,277.6 480,471.4 760,311.8 S 1240,437.2 1640,300.4" fill="none" stroke="url(#pg-grad)" stroke-width="0.85" class="bp-line" style="animation-delay:2.45s"/>
+      <path d="M -200,444 C 200,348.0 480,450.0 760,366.0 S 1240,432.0 1640,360.0" fill="none" stroke="url(#pg-grad)" stroke-width="1.10" class="bp-line" style="animation-delay:2.80s"/>
+      <path d="M -200,500 C 200,375.2 480,507.8 760,398.6 S 1240,484.4 1640,390.8" fill="none" stroke="url(#pg-grad)" stroke-width="0.60" class="bp-line" style="animation-delay:3.15s"/>
+      <path d="M -200,556 C 200,402.4 480,565.6 760,431.2 S 1240,536.8 1640,421.6" fill="none" stroke="url(#pg-grad)" stroke-width="0.85" class="bp-line" style="animation-delay:3.50s"/>
+      <path d="M -200,612 C 200,429.6 480,623.4 760,463.8 S 1240,589.2 1640,452.4" fill="none" stroke="url(#pg-grad)" stroke-width="1.10" class="bp-line" style="animation-delay:3.85s"/>
+      <path d="M -200,596 C 200,500.0 480,602.0 760,518.0 S 1240,584.0 1640,512.0" fill="none" stroke="url(#pg-grad)" stroke-width="0.60" class="bp-line" style="animation-delay:4.20s"/>
+      <path d="M -200,652 C 200,527.2 480,659.8 760,550.6 S 1240,636.4 1640,542.8" fill="none" stroke="url(#pg-grad)" stroke-width="0.85" class="bp-line" style="animation-delay:4.55s"/>
+      <path d="M -200,708 C 200,554.4 480,717.6 760,583.2 S 1240,688.8 1640,573.6" fill="none" stroke="url(#pg-grad)" stroke-width="1.10" class="bp-line" style="animation-delay:4.90s"/>
+      <path d="M -200,764 C 200,581.6 480,775.4 760,615.8 S 1240,741.2 1640,604.4" fill="none" stroke="url(#pg-grad)" stroke-width="0.60" class="bp-line" style="animation-delay:5.25s"/>
+      <path d="M -200,748 C 200,652.0 480,754.0 760,670.0 S 1240,736.0 1640,664.0" fill="none" stroke="url(#pg-grad)" stroke-width="0.85" class="bp-line" style="animation-delay:5.60s"/>
+      <path d="M -200,804 C 200,679.2 480,811.8 760,702.6 S 1240,788.4 1640,694.8" fill="none" stroke="url(#pg-grad)" stroke-width="1.10" class="bp-line" style="animation-delay:5.95s"/>
+      <path d="M -200,860 C 200,706.4 480,869.6 760,735.2 S 1240,840.8 1640,725.6" fill="none" stroke="url(#pg-grad)" stroke-width="0.60" class="bp-line" style="animation-delay:0.30s"/>
+      <path d="M -200,916 C 200,733.6 480,927.4 760,767.8 S 1240,893.2 1640,756.4" fill="none" stroke="url(#pg-grad)" stroke-width="0.85" class="bp-line" style="animation-delay:0.65s"/>
+      <circle class="bp-ring" cx="1240" cy="170" r="360" fill="none" stroke="#C5A46B" stroke-width=".5" opacity=".11"/>
+      <circle class="bp-ring2" cx="1240" cy="170" r="250" fill="none" stroke="#C5A46B" stroke-width=".5" opacity=".07"/>
     </svg>
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
   </div>
   <div class="container">
     <div class="hero__inner">
@@ -974,9 +1192,28 @@ section{position:relative}
 <!-- FINAL CTA -->
 <section class="final">
   <div class="final__bg">
-    <svg width="100%" height="100%" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="200" cy="300" r="260" fill="none" stroke="#1A3330" stroke-width=".5" opacity=".15"/>
-      <circle cx="1240" cy="200" r="220" fill="none" stroke="#1A3330" stroke-width=".5" opacity=".12"/>
+    <svg class="bg-paths bg-paths--cream" width="100%" height="100%" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="pg-grad-final" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#1A3330" stop-opacity="0.30"/>
+          <stop offset="50%" stop-color="#1A3330" stop-opacity="0.10"/>
+          <stop offset="100%" stop-color="#1A3330" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M -200,161 C 200,65.0 480,167.0 760,83.0 S 1240,149.0 1640,77.0" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.60" class="bp-line" style="animation-delay:0.00s"/>
+      <path d="M -200,217 C 200,92.2 480,224.8 760,115.6 S 1240,201.4 1640,107.8" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.85" class="bp-line" style="animation-delay:0.35s"/>
+      <path d="M -200,273 C 200,119.4 480,282.6 760,148.2 S 1240,253.8 1640,138.6" fill="none" stroke="url(#pg-grad-final)" stroke-width="1.10" class="bp-line" style="animation-delay:0.70s"/>
+      <path d="M -200,329 C 200,146.60000000000002 480,340.4 760,180.8 S 1240,306.2 1640,169.4" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.60" class="bp-line" style="animation-delay:1.05s"/>
+      <path d="M -200,313 C 200,217.0 480,319.0 760,235.0 S 1240,301.0 1640,229.0" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.85" class="bp-line" style="animation-delay:1.40s"/>
+      <path d="M -200,369 C 200,244.2 480,376.8 760,267.6 S 1240,353.4 1640,259.8" fill="none" stroke="url(#pg-grad-final)" stroke-width="1.10" class="bp-line" style="animation-delay:1.75s"/>
+      <path d="M -200,425 C 200,271.4 480,434.6 760,300.2 S 1240,405.8 1640,290.6" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.60" class="bp-line" style="animation-delay:2.10s"/>
+      <path d="M -200,481 C 200,298.6 480,492.4 760,332.8 S 1240,458.2 1640,321.4" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.85" class="bp-line" style="animation-delay:2.45s"/>
+      <path d="M -200,465 C 200,369.0 480,471.0 760,387.0 S 1240,453.0 1640,381.0" fill="none" stroke="url(#pg-grad-final)" stroke-width="1.10" class="bp-line" style="animation-delay:2.80s"/>
+      <path d="M -200,521 C 200,396.2 480,528.8 760,419.6 S 1240,505.4 1640,411.8" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.60" class="bp-line" style="animation-delay:3.15s"/>
+      <path d="M -200,577 C 200,423.4 480,586.6 760,452.2 S 1240,557.8 1640,442.6" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.85" class="bp-line" style="animation-delay:3.50s"/>
+      <path d="M -200,633 C 200,450.6 480,644.4 760,484.8 S 1240,610.2 1640,473.4" fill="none" stroke="url(#pg-grad-final)" stroke-width="1.10" class="bp-line" style="animation-delay:3.85s"/>
+      <path d="M -200,617 C 200,521.0 480,623.0 760,539.0 S 1240,605.0 1640,533.0" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.60" class="bp-line" style="animation-delay:4.20s"/>
+      <path d="M -200,673 C 200,548.2 480,680.8 760,571.6 S 1240,657.4 1640,563.8" fill="none" stroke="url(#pg-grad-final)" stroke-width="0.85" class="bp-line" style="animation-delay:4.55s"/>
     </svg>
   </div>
   <div class="container">
