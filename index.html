@@ -566,14 +566,14 @@ section{position:relative}
   animation:orb-float 11s ease-in-out infinite;
 }
 .hero-orb--1{
-  width:380px;height:380px;
-  background:radial-gradient(circle,rgba(197,164,107,.35) 0%,rgba(197,164,107,0) 70%);
-  top:8%;right:6%;
+  width:280px;height:280px;
+  background:radial-gradient(circle,rgba(232,201,142,.30) 0%,rgba(232,201,142,0) 70%);
+  top:12%;left:8%;
 }
 .hero-orb--2{
-  width:300px;height:300px;
-  background:radial-gradient(circle,rgba(45,114,100,.30) 0%,rgba(45,114,100,0) 70%);
-  bottom:10%;left:4%;
+  width:240px;height:240px;
+  background:radial-gradient(circle,rgba(197,164,107,.22) 0%,rgba(197,164,107,0) 70%);
+  bottom:14%;left:18%;
   animation-delay:-5.5s;
 }
 
@@ -650,16 +650,18 @@ section{position:relative}
 .service-card--flagship{animation:flagship-glow 4.5s ease-in-out infinite}
 .service-card--flagship:hover{animation:none}
 
-/* === Sweep-line on card hover (Why / Who / Process / Service) === */
-.why-card,.who-card,.process-card,.service-card{position:relative;overflow:hidden}
-.why-card::after,.who-card::after,.process-card::after,.service-card::after{
+/* === Sweep-line on card hover (Why / Who / Process — service excluded to keep badge visible) === */
+.why-card,.who-card,.process-card{position:relative;overflow:hidden}
+.why-card::after,.who-card::after,.process-card::after{
   content:"";
   position:absolute;top:0;left:-100%;width:100%;height:1.5px;
-  background:linear-gradient(90deg,transparent 0%,rgba(197,164,107,.0) 20%,rgba(197,164,107,.9) 50%,rgba(197,164,107,0) 80%,transparent 100%);
+  background:linear-gradient(90deg,transparent 0%,rgba(197,164,107,.0) 20%,rgba(232,201,142,1) 50%,rgba(197,164,107,0) 80%,transparent 100%);
   transition:left .9s cubic-bezier(.16,1,.3,1);
   pointer-events:none;
 }
-.why-card:hover::after,.who-card:hover::after,.process-card:hover::after,.service-card:hover::after{left:100%}
+.why-card:hover::after,.who-card:hover::after,.process-card:hover::after{left:100%}
+/* Service cards: overflow:visible so MOST POPULAR badge can extend above */
+.service-card{overflow:visible}
 
 /* === Most Popular badge glow pulse === */
 @keyframes badge-glow{
@@ -717,6 +719,221 @@ section{position:relative}
 @media (prefers-reduced-motion:reduce){
   .bp-line,.hero-orb,.bp-ring,.bp-ring2,.service-card--flagship,.service-card__badge{animation:none !important}
   .btn-gold::before,.form-submit::before,.final__btn::before,.service-card__cta::before,.nav__cta::before{display:none}
+}
+
+
+/* ============================================================
+   BRIGHTER GOLD + CONTINUOUS PULSE + GLOWING ANIMATED BORDERS
+   ============================================================ */
+
+/* Brighter gold tokens for accents */
+:root{
+  --gold-bright:#E8C98E;
+  --gold-shine:#F5DBA0;
+}
+
+/* === Continuous pulse-glow on all primary gold buttons === */
+@keyframes pulse-glow{
+  0%,100%{
+    box-shadow:
+      0 10px 28px rgba(197,164,107,.30),
+      0 0 0 0 rgba(245,219,160,0),
+      inset 0 1px 0 rgba(255,255,255,.30);
+  }
+  50%{
+    box-shadow:
+      0 14px 40px rgba(197,164,107,.45),
+      0 0 32px 6px rgba(245,219,160,.30),
+      inset 0 1px 0 rgba(255,255,255,.45);
+  }
+}
+.btn-gold,
+.form-submit,
+.final__btn,
+.service-card--flagship .service-card__cta,
+.nav__cta{
+  animation:pulse-glow 2.6s ease-in-out infinite;
+}
+/* Hover overrides the pulse with the existing hover state */
+.btn-gold:hover,
+.form-submit:hover,
+.final__btn:hover,
+.service-card--flagship .service-card__cta:hover,
+.nav__cta:hover{
+  animation:none;
+}
+
+/* === Even brighter gradient on buttons (override the previous one) === */
+.btn-gold,
+.form-submit,
+.final__btn,
+.service-card__cta:not(.service-card__cta--outline),
+.nav__cta{
+  background:linear-gradient(135deg,#B8975E 0%,#C5A46B 18%,#E8C98E 45%,#F5DBA0 50%,#E8C98E 55%,#C5A46B 82%,#B8975E 100%) !important;
+  background-size:220% 220% !important;
+}
+
+/* === GLOWING ANIMATED BORDER on PREMIUM card (conic-gradient rotating) === */
+@property --premium-angle{
+  syntax:"<angle>";
+  initial-value:0deg;
+  inherits:false;
+}
+@keyframes premium-rotate{
+  to{--premium-angle:360deg}
+}
+.service-card--flagship{
+  background:
+    linear-gradient(180deg,rgba(26,51,48,.92) 0%,rgba(26,51,48,.85) 40%,rgba(26,51,48,.78) 100%) padding-box,
+    conic-gradient(from var(--premium-angle),
+      #C5A46B 0%,
+      #E8C98E 15%,
+      #F5DBA0 25%,
+      #E8C98E 35%,
+      #C5A46B 50%,
+      #B8975E 65%,
+      #C5A46B 80%,
+      #E8C98E 95%,
+      #C5A46B 100%) border-box;
+  border:2px solid transparent;
+  animation:premium-rotate 5s linear infinite,flagship-glow 4.5s ease-in-out infinite;
+}
+.service-card--flagship:hover{
+  animation:premium-rotate 2.5s linear infinite;
+}
+/* Re-restate flagship-glow with brighter colors */
+@keyframes flagship-glow{
+  0%,100%{box-shadow:0 24px 64px rgba(197,164,107,.12),0 0 40px 0 rgba(245,219,160,.0)}
+  50%{box-shadow:0 36px 90px rgba(197,164,107,.30),0 0 60px 12px rgba(245,219,160,.18)}
+}
+
+/* === HYBRID + ASSESSMENT cards: subtle animated outer glow on hover === */
+.service-card:not(.service-card--flagship){
+  transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .5s;
+}
+.service-card:not(.service-card--flagship):hover{
+  border-color:rgba(232,201,142,.65);
+  box-shadow:0 32px 72px rgba(0,0,0,.25),0 0 40px 4px rgba(232,201,142,.18);
+}
+
+/* === MOST POPULAR badge — even more brilliant and bouncier === */
+.service-card__badge{
+  background:linear-gradient(135deg,#C5A46B 0%,#F5DBA0 50%,#C5A46B 100%) !important;
+  background-size:200% 200% !important;
+  animation:badge-shine 2.5s ease-in-out infinite,badge-glow-bright 2s ease-in-out infinite !important;
+  color:var(--green) !important;
+}
+@keyframes badge-shine{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+@keyframes badge-glow-bright{
+  0%,100%{box-shadow:0 10px 28px rgba(197,164,107,.50),0 0 0 0 rgba(245,219,160,0)}
+  50%{box-shadow:0 14px 40px rgba(245,219,160,.75),0 0 36px 10px rgba(245,219,160,.25)}
+}
+
+/* === Pricing block: gold halo + shine sweep + bigger gradient price === */
+.service-card__pricing{
+  background:linear-gradient(180deg,rgba(197,164,107,.10) 0%,rgba(197,164,107,.02) 100%);
+  border-radius:14px;
+  padding:24px 18px 22px;
+  margin-top:auto;
+  margin-bottom:18px;
+  position:relative;
+  overflow:hidden;
+  border-top:1px solid rgba(197,164,107,.30);
+}
+.service-card__pricing::before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(115deg,transparent 25%,rgba(245,219,160,.20) 50%,transparent 75%);
+  transform:translateX(-100%);
+  animation:price-shine 5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes price-shine{
+  0%,100%{transform:translateX(-100%)}
+  60%{transform:translateX(100%)}
+}
+.service-card__price strong{
+  font-size:40px !important;
+  background:linear-gradient(135deg,#C5A46B 0%,#F5DBA0 50%,#E8C98E 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+  filter:drop-shadow(0 0 18px rgba(245,219,160,.30));
+  position:relative;z-index:1;
+}
+.service-card__price span{position:relative;z-index:1}
+.service-card__price-detail{position:relative;z-index:1}
+
+/* === Hero photo: ensure it sits ABOVE all background effects === */
+.hero__inner{position:relative;z-index:5}
+.hero__photo{
+  position:relative !important;
+  z-index:4 !important;
+  background:var(--green);
+}
+.hero__photo-wrap{isolation:isolate}
+
+/* === Hero orbs: ensure they stay behind hero content === */
+.hero__bg{z-index:1}
+.hero__bg .hero-orb,.hero__bg .bg-paths{z-index:1}
+
+/* === GLOWING SECTION DIVIDER (animated horizontal gradient line) === */
+.section-glow-divider{
+  height:1px;border:none;margin:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(197,164,107,.35) 20%,rgba(245,219,160,.85) 50%,rgba(197,164,107,.35) 80%,transparent 100%);
+  background-size:200% 100%;
+  animation:divider-shift 6s linear infinite;
+}
+@keyframes divider-shift{
+  0%{background-position:0% 0%}
+  100%{background-position:200% 0%}
+}
+
+/* === Subtle animated outline glow on the HOW WE HELP container === */
+#how-we-help{position:relative}
+#how-we-help::before,#how-we-help::after{
+  content:"";
+  position:absolute;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent 0%,rgba(245,219,160,.5) 30%,rgba(245,219,160,.9) 50%,rgba(245,219,160,.5) 70%,transparent 100%);
+  background-size:200% 100%;
+  animation:divider-shift 8s linear infinite;
+  pointer-events:none;
+}
+#how-we-help::before{top:0}
+#how-we-help::after{bottom:0}
+
+/* Same for the FINAL CTA */
+.final{position:relative}
+.final::before{
+  content:"";
+  position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent 0%,rgba(26,51,48,.5) 30%,rgba(26,51,48,.9) 50%,rgba(26,51,48,.5) 70%,transparent 100%);
+  background-size:200% 100%;
+  animation:divider-shift 8s linear infinite;
+  pointer-events:none;
+}
+
+/* === Service card feats: subtle pulse on the check circles === */
+@keyframes check-pulse{
+  0%,100%{background:rgba(197,164,107,.16);border-color:rgba(197,164,107,.40)}
+  50%{background:rgba(245,219,160,.26);border-color:rgba(245,219,160,.65)}
+}
+.service-card--flagship .service-card__feats li:before{
+  animation:check-pulse 3s ease-in-out infinite;
+}
+
+/* === Reduced motion respect === */
+@media (prefers-reduced-motion:reduce){
+  .btn-gold,.form-submit,.final__btn,.service-card--flagship,.service-card--flagship .service-card__cta,
+  .nav__cta,.service-card__badge,.service-card__pricing::before,.section-glow-divider,
+  #how-we-help::before,#how-we-help::after,.final::before,
+  .service-card--flagship .service-card__feats li:before{
+    animation:none !important;
+  }
 }
 
 </style>
