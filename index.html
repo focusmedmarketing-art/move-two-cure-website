@@ -936,6 +936,111 @@ section{position:relative}
   }
 }
 
+
+/* ============================================================
+   COMMITMENT LEVELS (inside Premium card) + REAL TESTIMONIALS
+   ============================================================ */
+
+.commitment-levels{
+  margin:6px 0 22px;
+  padding:18px 18px 10px;
+  background:rgba(245,219,160,.06);
+  border-radius:12px;
+  border:1px solid rgba(197,164,107,.18);
+}
+.commitment-levels__title{
+  font-size:9.5px;letter-spacing:3px;color:var(--gold-bright,#E8C98E);
+  text-transform:uppercase;font-weight:700;
+  margin-bottom:14px;text-align:center;
+}
+.commitment-tier{
+  padding:10px 0;
+  border-top:1px dashed rgba(197,164,107,.20);
+}
+.commitment-tier:first-of-type{border-top:none;padding-top:4px}
+.commitment-tier h4{
+  font-family:'DM Serif Display',serif;
+  font-size:16px;color:var(--cream);
+  margin-bottom:5px;letter-spacing:-.1px;
+  line-height:1.2;
+}
+.commitment-tier p{
+  font-size:12.5px;color:var(--cream);opacity:.72;
+  line-height:1.55;letter-spacing:0;
+}
+
+/* Soft pricing block (used when the card has no fixed price) */
+.service-card__pricing--soft{
+  background:transparent;
+  border-top:1px dashed rgba(197,164,107,.25);
+  padding:18px 8px 12px !important;
+}
+.service-card__pricing--soft::before{display:none}
+
+/* === Real testimonials === */
+.real-stories-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+  margin-top:48px;
+  align-items:start;
+}
+.real-story{
+  background:var(--white);
+  border-radius:20px;
+  padding:42px 36px 32px;
+  box-shadow:0 16px 44px rgba(26,51,48,.08);
+  border-left:3px solid var(--gold);
+  margin:0;
+  position:relative;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;
+}
+.real-story:hover{
+  transform:translateY(-4px);
+  box-shadow:0 24px 60px rgba(26,51,48,.12);
+}
+.real-story__mark{
+  position:absolute;
+  top:12px;left:24px;
+  font-family:'DM Serif Display',serif;
+  font-size:80px;line-height:1;
+  color:var(--gold);opacity:.18;
+  pointer-events:none;
+  font-style:italic;
+}
+.real-story__quote{
+  font-size:14.5px;
+  line-height:1.72;
+  color:var(--green);
+  font-weight:300;
+  font-style:italic;
+  margin-bottom:24px;
+  white-space:pre-line;
+  position:relative;
+  z-index:1;
+}
+.real-story__by{
+  display:flex;flex-direction:column;gap:3px;
+  padding-top:18px;
+  border-top:1px solid rgba(26,51,48,.08);
+}
+.real-story__name{
+  font-family:'DM Serif Display',serif;
+  font-size:18px;color:var(--green);
+  letter-spacing:-.2px;
+}
+.real-story__role{
+  font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);
+  font-weight:600;
+}
+@media (max-width:920px){
+  .real-stories-grid{grid-template-columns:1fr;gap:20px;margin-top:36px}
+  .real-story{padding:34px 26px 26px}
+  .real-story__mark{font-size:62px;top:8px;left:18px}
+  .real-story__quote{font-size:14px;line-height:1.68}
+}
+
 </style>
 
 
@@ -1029,9 +1134,9 @@ section{position:relative}
             <div class="form-field" style="grid-column:1/-1"><label for="hinterest">What interests you most?</label>
               <select id="hinterest" name="interest" required>
                 <option value="">Select&hellip;</option>
-                <option>Premium Coaching (online)</option>
-                <option>Hybrid Coaching (London + online)</option>
-                <option>Just the Assessment, $120</option>
+                <option>Premium Coaching</option>
+                <option>Hybrid Coaching</option>
+                <option>M2C Assessment</option>
                 <option>Not sure yet</option>
               </select>
             </div>
@@ -1161,7 +1266,7 @@ section{position:relative}
       <div class="service-card service-card--flagship reveal-sc">
         <span class="service-card__badge">&#9733; Most Popular</span>
         <p class="service-card__lbl">Online &middot; across Canada</p>
-        <h3 class="service-card__name">Move Two Cure Premium Coaching</h3>
+        <h3 class="service-card__name">Premium Coaching</h3>
         <p class="service-card__sub">100% online coaching, available across Canada. For people who want continuous clinical guidance, personalized programming, and a plan that evolves as they evolve.</p>
         <ul class="service-card__feats">
           <li>Personalized training program</li>
@@ -1170,17 +1275,31 @@ section{position:relative}
           <li>Progress tracking</li>
           <li>Program updates as you evolve</li>
         </ul>
-        <div class="service-card__pricing">
-          <div class="service-card__price"><strong style="font-size:18px">Monthly &middot; 6-Month &middot; Annual</strong></div>
-          <div class="service-card__price-detail">Pricing discussed on your free consultation</div>
+        <div class="commitment-levels">
+          <p class="commitment-levels__title">Choose Your Commitment Level</p>
+          <div class="commitment-tier">
+            <h4>Monthly</h4>
+            <p>Flexible coaching with no long-term commitment. 30 days notice required to cancel.</p>
+          </div>
+          <div class="commitment-tier">
+            <h4>6-Month Coaching</h4>
+            <p>Ideal for building momentum, accountability, and lasting habits.</p>
+          </div>
+          <div class="commitment-tier">
+            <h4>12-Month Coaching</h4>
+            <p>Designed for those committed to long-term health, strength, and performance.</p>
+          </div>
         </div>
-        <a href="#book" class="service-card__cta" data-interest="Premium Coaching (online)">Book My Free Consultation <span>&rarr;</span></a>
+        <div class="service-card__pricing service-card__pricing--soft">
+          <div class="service-card__price-detail" style="font-size:13px;opacity:.85;line-height:1.55;letter-spacing:0">We&rsquo;ll help you choose the right coaching option during your free consultation.</div>
+        </div>
+        <a href="#book" class="service-card__cta" data-interest="Premium Coaching">Book My Free Consultation <span>&rarr;</span></a>
       </div>
 
       <!-- Hybrid -->
       <div class="service-card reveal-sc rd1">
         <p class="service-card__lbl">Hybrid &middot; London, ON + online</p>
-        <h3 class="service-card__name">Move Two Cure Hybrid Coaching</h3>
+        <h3 class="service-card__name">Hybrid Coaching</h3>
         <p class="service-card__sub">For clients who want to start with a comprehensive in-person assessment in London, Ontario, and then continue with online coaching.</p>
         <ul class="service-card__feats">
           <li>Initial comprehensive assessment (in-person)</li>
@@ -1189,17 +1308,16 @@ section{position:relative}
           <li>Coaching app access</li>
           <li>Ongoing coach support and direct communication</li>
         </ul>
-        <div class="service-card__pricing">
-          <div class="service-card__price"><strong style="font-size:18px">Pricing on consultation</strong></div>
-          <div class="service-card__price-detail">Hybrid path discussed on the free call</div>
+        <div class="service-card__pricing service-card__pricing--soft">
+          <div class="service-card__price-detail" style="font-size:13px;opacity:.85;line-height:1.55;letter-spacing:0">Choose the coaching option that best fits your goals and level of support.</div>
         </div>
-        <a href="#book" class="service-card__cta" data-interest="Hybrid Coaching (London + online)">Book My Free Consultation <span>&rarr;</span></a>
+        <a href="#book" class="service-card__cta" data-interest="Hybrid Coaching">Book My Free Consultation <span>&rarr;</span></a>
       </div>
 
       <!-- Standalone Assessment -->
       <div class="service-card reveal-sc rd2">
         <p class="service-card__lbl">Standalone service &middot; London, ON</p>
-        <h3 class="service-card__name">Move Two Cure Assessment</h3>
+        <h3 class="service-card__name">M2C Assessment</h3>
         <p class="service-card__sub">A standalone service. A single, complete session to understand how your body moves and identify the right next steps. No commitment to continued coaching required.</p>
         <ul class="service-card__feats">
           <li>Complete movement assessment</li>
@@ -1213,7 +1331,7 @@ section{position:relative}
           <div class="service-card__price"><strong>$120</strong><span> &middot; one-time</span></div>
           <div class="service-card__price-detail">60 minutes &middot; In-person &middot; London, Ontario</div>
         </div>
-        <a href="#book" class="service-card__cta service-card__cta--outline" data-interest="Just the Assessment, $120">Book the Assessment &middot; $120 <span>&rarr;</span></a>
+        <a href="#book" class="service-card__cta service-card__cta--outline" data-interest="M2C Assessment">Book the Assessment &middot; $120 <span>&rarr;</span></a>
         <p class="service-card__small-note">Submit the form and we&rsquo;ll reply within 24 hours to confirm your appointment.</p>
       </div>
     </div>
@@ -1322,9 +1440,37 @@ section{position:relative}
       <span class="label label--dark" style="display:inline-block">Client stories</span>
       <h2 class="s-title" style="color:var(--green)">Real people.<br><em>Real results.</em></h2>
     </div>
-    <div class="stories-placeholder reveal">
-      <h3 class="stories-placeholder__t">Real client stories, coming soon.</h3>
-      <p class="stories-placeholder__s">Yours could be the first one we tell.</p>
+    <div class="real-stories-grid">
+      <figure class="real-story reveal-l">
+        <div class="real-story__mark">&ldquo;</div>
+        <div class="real-story__quote">When I started training, my body really felt it. I had gone 3 years without any physical activity. But little by little, my energy and my daily life started to change. I gained more disposition with every week.
+
+Today, everything has changed. I have more energy, I pay more attention to my nutrition, and my pain has reduced significantly. We&rsquo;re still working on my lower back because sometimes it &ldquo;says hello,&rdquo; mostly because of my job, but the activity has been essential to improving it.
+
+I exercise out of love for myself. I&rsquo;m the only one who can change this. It isn&rsquo;t easy. It takes discipline and willpower. But when you look back and see how much you&rsquo;ve grown, it&rsquo;s so worth it.
+
+For my physical and mental health. A healthy body, a healthy mind.
+
+Thank you, Jey and Jack. Move 2 Cure is this!</div>
+        <figcaption class="real-story__by">
+          <span class="real-story__name">Melânia Daleprane</span>
+          <span class="real-story__role">Coaching client</span>
+        </figcaption>
+      </figure>
+      <figure class="real-story reveal-r rd1">
+        <div class="real-story__mark">&ldquo;</div>
+        <div class="real-story__quote">Going through the Rolfing process with Jack was a much deeper experience than I expected. Beyond the physical benefits, like feeling lighter, more open, and free in my body after each session, what stood out most was the awareness I gained.
+
+For the first time, I was able to understand how posture, tension, and even emotional patterns are connected. It was truly a process of self-discovery.
+
+Jack is an incredibly dedicated and skilled professional. You can feel the care and knowledge she brings into every session, and the exercises she provides really help maintain the results. Her calm presence makes a big difference.
+
+I&rsquo;m very grateful and highly recommend her.</div>
+        <figcaption class="real-story__by">
+          <span class="real-story__name">Jéssica Blaszcyk</span>
+          <span class="real-story__role">Rolfing&reg; client</span>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1381,9 +1527,9 @@ section{position:relative}
           <div class="form-field"><label for="interest">What interests you most?</label>
             <select id="interest" name="interest" required>
               <option value="">Select one&hellip;</option>
-              <option>Premium Coaching (online)</option>
-              <option>Hybrid Coaching (London + online)</option>
-              <option>Just the Assessment, $120</option>
+              <option>Premium Coaching</option>
+              <option>Hybrid Coaching</option>
+              <option>M2C Assessment</option>
               <option>Not sure yet</option>
             </select>
           </div>
@@ -1438,7 +1584,7 @@ section{position:relative}
     <h2 class="final__title reveal rd1">Ready to move better,<br>feel better, and <em>perform better?</em></h2>
     <p class="final__sub reveal rd2">Let&rsquo;s build a plan that works for your body and your goals.</p>
     <a href="#how-we-help" class="final__btn reveal rd2">See How We Help <span class="arr">&rarr;</span></a>
-    <a href="#book" class="final__alt reveal rd3" data-interest="Just the Assessment, $120">Or, book just the Assessment ($120, in-person) &rarr;</a>
+    <a href="#book" class="final__alt reveal rd3" data-interest="M2C Assessment">Or, book just the Assessment ($120, in-person) &rarr;</a>
     <div class="final__seals reveal rd3" style="margin-top:30px">
       <div class="final__seal">&#10003; Online across Canada</div>
       <div class="final__seal">&#10003; Led by healthcare professionals</div>
