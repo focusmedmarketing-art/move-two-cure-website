@@ -980,10 +980,13 @@ section{position:relative}
 /* === Real testimonials === */
 .real-stories-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:28px;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
   margin-top:48px;
   align-items:start;
+}
+@media (max-width:1100px){
+  .real-stories-grid{grid-template-columns:repeat(2,1fr);gap:22px}
 }
 .real-story{
   background:var(--white);
@@ -1039,6 +1042,16 @@ section{position:relative}
   .real-story{padding:34px 26px 26px}
   .real-story__mark{font-size:62px;top:8px;left:18px}
   .real-story__quote{font-size:14px;line-height:1.68}
+}
+
+
+.real-story__rating{
+  color:#E8B947;
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:16px;
+  position:relative;z-index:1;
+  text-shadow:0 0 12px rgba(232,185,71,.30);
 }
 
 </style>
@@ -1469,6 +1482,15 @@ I&rsquo;m very grateful and highly recommend her.</div>
         <figcaption class="real-story__by">
           <span class="real-story__name">Jéssica Blaszcyk</span>
           <span class="real-story__role">Rolfing&reg; client</span>
+        </figcaption>
+      </figure>
+      <figure class="real-story reveal-sc rd2">
+        <div class="real-story__mark">&ldquo;</div>
+        <div class="real-story__rating" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="real-story__quote">I am a 58 year old with many orthopedic issues including ankles, knees and lower back. Working with Jamison as a Trainor for the past three years has helped me improve mobility, gain strength and improve my quality of life. Jamison&rsquo;s approach is positive, knowledge based and flexible; considering individuals limitations and modifying expectations.</div>
+        <figcaption class="real-story__by">
+          <span class="real-story__name">Janet Carew</span>
+          <span class="real-story__role">Personal training client &middot; 3 years</span>
         </figcaption>
       </figure>
     </div>
