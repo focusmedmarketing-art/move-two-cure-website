@@ -1054,6 +1054,22 @@ section{position:relative}
   text-shadow:0 0 12px rgba(232,185,71,.30);
 }
 
+
+/* Support paragraph under istu-closing (Is This You? section) */
+.istu-support{
+  text-align:center;
+  margin:20px auto 0;
+  max-width:760px;
+  font-size:15px;
+  color:var(--cream);
+  opacity:.72;
+  line-height:1.7;
+  letter-spacing:.1px;
+}
+@media (max-width:920px){
+  .istu-support{font-size:14px;line-height:1.65}
+}
+
 </style>
 
 
@@ -1063,7 +1079,7 @@ section{position:relative}
     <a href="#why">Why Move Two Cure</a>
     <a href="#how-we-help">How We Help</a>
     <a href="#process">Process</a>
-    <a href="#coaches">Coaches</a>
+    <a href="#coaches">Who We Are</a>
     <a href="#faq">FAQ</a>
   </div>
   <a href="#book" class="nav__cta">Book a Free Consultation</a>
@@ -1182,19 +1198,19 @@ section{position:relative}
 <section class="s-dark" id="is-this-you">
   <div class="container">
     <div class="s-head reveal" style="text-align:center">
-      <span class="label" style="display:inline-block">Read this before you scroll</span>
-      <h2 class="s-title">Tried everything,<br>and nothing is <em>working?</em></h2>
+      <h2 class="s-title" style="margin-top:20px">Tried everything,<br>and nothing is <em>working?</em></h2>
     </div>
     <div class="istu-list">
-      <div class="istu-item reveal"><span class="istu-item__x">&times;</span><p class="istu-item__t">You have pain that comes back, and nobody truly explained <em>why.</em></p></div>
-      <div class="istu-item reveal rd1"><span class="istu-item__x">&times;</span><p class="istu-item__t">You train, but you feel like you&rsquo;re doing it in the <em>dark.</em></p></div>
+      <div class="istu-item reveal"><span class="istu-item__x">&times;</span><p class="istu-item__t">Your pain keeps coming back, and no one has ever explained <em>why.</em></p></div>
+      <div class="istu-item reveal rd1"><span class="istu-item__x">&times;</span><p class="istu-item__t">You train, but it feels like you&rsquo;re doing it in the <em>dark.</em></p></div>
       <div class="istu-item reveal rd2"><span class="istu-item__x">&times;</span><p class="istu-item__t">Your results have <em>plateaued</em> and you don&rsquo;t know why.</p></div>
       <div class="istu-item reveal rd3"><span class="istu-item__x">&times;</span><p class="istu-item__t">You want to run, lift, or play again, but you&rsquo;re <em>afraid</em> of getting hurt.</p></div>
-      <div class="istu-item reveal rd4"><span class="istu-item__x">&times;</span><p class="istu-item__t">You want to prevent injury <em>before</em> it happens.</p></div>
+      <div class="istu-item reveal rd4"><span class="istu-item__x">&times;</span><p class="istu-item__t">You want to prevent injuries <em>before</em> they happen.</p></div>
       <div class="istu-item reveal rd5"><span class="istu-item__x">&times;</span><p class="istu-item__t">You want a body that&rsquo;s strong for life, not just for the season.</p></div>
     </div>
-    <p class="istu-closing reveal">The problem isn&rsquo;t you. The problem is training without ever being read.</p>
-    <div style="text-align:center;margin-top:40px"><a href="#how-we-help" class="btn-gold">I want to be read, see how we help <span class="arr">&rarr;</span></a></div>
+    <p class="istu-closing reveal">Every body tells a story. We know how to <em>read it.</em></p>
+    <p class="istu-support reveal rd1">Before we prescribe exercise, we assess how your body moves, compensates, adapts, and protects itself. Because a program built without understanding your body is just another guess.</p>
+    <div style="text-align:center;margin-top:40px"><a href="#how-we-help" class="btn-gold">See how we read your body <span class="arr">&rarr;</span></a></div>
   </div>
 </section>
 
@@ -1241,8 +1257,8 @@ section{position:relative}
     <div class="who-grid">
       <div class="who-card reveal-sc">
         <div class="who-card__check">&#10003;</div>
-        <h3 class="who-card__h">People dealing with pain or past injuries</h3>
-        <p class="who-card__b">Coming back to movement with safety, not fear.</p>
+        <h3 class="who-card__h">People dealing with pain or previous injuries</h3>
+        <p class="who-card__b">Helping you move with confidence, not fear.</p>
       </div>
       <div class="who-card reveal-sc rd1">
         <div class="who-card__check">&#10003;</div>
@@ -1252,12 +1268,12 @@ section{position:relative}
       <div class="who-card reveal-sc rd2">
         <div class="who-card__check">&#10003;</div>
         <h3 class="who-card__h">Runners and active individuals</h3>
-        <p class="who-card__b">Wanting to progress without breaking down.</p>
+        <p class="who-card__b">Looking for strength and health that fit real life.</p>
       </div>
       <div class="who-card reveal-sc rd3">
         <div class="who-card__check">&#10003;</div>
         <h3 class="who-card__h">Adults focused on longevity</h3>
-        <p class="who-card__b">Building a body that&rsquo;s strong for the years ahead.</p>
+        <p class="who-card__b">Building a body that lasts a lifetime.</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:48px">
@@ -1316,7 +1332,7 @@ section{position:relative}
         <p class="service-card__sub">For clients who want to start with a comprehensive in-person assessment in London, Ontario, and then continue with online coaching.</p>
         <ul class="service-card__feats">
           <li>Initial comprehensive assessment (in-person)</li>
-          <li>Movement, mobility, strength, and health baseline evaluation</li>
+          <li>Comprehensive baseline assessment of movement, mobility, strength, and overall health</li>
           <li>Personalized training program</li>
           <li>Coaching app access</li>
           <li>Ongoing coach support and direct communication</li>
@@ -1387,9 +1403,9 @@ section{position:relative}
 <section class="s-dark" id="coaches">
   <div class="container">
     <div class="s-head reveal" style="text-align:center">
-      <span class="label" style="display:inline-block">Meet your coaches</span>
-      <h2 class="s-title">Meet the team behind<br><em>Move Two Cure.</em></h2>
-      <p class="s-sub" style="margin:18px auto 0;font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);font-size:20px;max-width:580px;line-height:1.4">&ldquo;Two healthcare professionals. One integrated approach.&rdquo;</p>
+      <span class="label" style="display:inline-block">Who we are</span>
+      <h2 class="s-title">The team behind<br><em>Move Two Cure.</em></h2>
+      <p class="s-sub" style="margin:18px auto 0;font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);font-size:20px;max-width:640px;line-height:1.4">A collaborative approach to movement, recovery, and performance.</p>
     </div>
     <div class="team__grid">
       <div class="team__card reveal-l">
@@ -1397,7 +1413,7 @@ section{position:relative}
         <div class="team__body">
           <p class="team__role">Personal Trainer &middot; Physiotherapy background</p>
           <h3 class="team__name">Jeymison Morais</h3>
-          <p class="team__bio">14+ years of clinical practice in human movement. Trained as a physiotherapist in Brazil, with a Master&rsquo;s in Acupuncture and training in Osteopathy. Leads movement and strength coaching.</p>
+          <p class="team__bio">A physiotherapy background shapes a more clinical, precise, and individualized approach to personal training. With over 14 years of experience as a physiotherapist in Brazil, specializing in sports rehabilitation and injury recovery, Jeymison developed a deep understanding of human movement, performance, and return to function and sports. His post-graduation in Acupuncture and extensive training in Osteopathy further strengthened his clinical reasoning and approach to recovery and adaptation. This foundation is carried into every assessment and training program, ensuring that each decision is based on how the body actually moves, not assumptions. The goal is simple: help clients train with confidence, clarity, and precision, without guesswork.</p>
         </div>
       </div>
       <div class="team__card reveal-r rd1">
@@ -1405,7 +1421,7 @@ section{position:relative}
         <div class="team__body">
           <p class="team__role">Physiotherapist &middot; Certified Rolfer&reg;</p>
           <h3 class="team__name">Jackeline Morais</h3>
-          <p class="team__bio">Registered Physiotherapist in Canada and Certified Rolfer&reg;. Trained in Brazil and Canada. Leads structural integration work.</p>
+          <p class="team__bio">A physiotherapy expertise combined with Rolfing&reg; creates a unique approach to chronic pain and movement dysfunction. Physiotherapist in Brazil since 2008, Jackeline is currently a registered Physiotherapist in Canada and brings over 10 years of experience in Rolfing&reg;, along with post-graduate training in Manual Therapy and certification in Pilates. Her approach is focused on structure, movement efficiency, and long-term adaptation. At Move Two Cure, she collaborates within an integrated model of care, where the focus is not symptom management, but improving how the body organizes, adapts, and moves over time.</p>
         </div>
       </div>
     </div>
@@ -1629,7 +1645,7 @@ I&rsquo;m very grateful and highly recommend her.</div>
         <a href="#why">Why</a>
         <a href="#how-we-help">How We Help</a>
         <a href="#process">Process</a>
-        <a href="#coaches">Coaches</a>
+        <a href="#coaches">Who We Are</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer__links">
